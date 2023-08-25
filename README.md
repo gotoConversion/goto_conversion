@@ -44,7 +44,7 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Experiment Results
 
-The experiment results table directly below is based on 6,000 football matches' betting odds across four different bookmakers.
+The experiment results table directly below is based on the same 6,000 football matches' betting odds across four different bookmakers.
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
