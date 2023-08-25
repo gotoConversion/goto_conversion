@@ -24,22 +24,22 @@ pip install goto-conversion
 
 ```python
 import goto_conversion
-goto_conversion.goto_conversion([2, 3.4, 5.6])
+goto_conversion.goto_conversion([1.2, 3.4, 5.6])
 ```
 
 ```
-[0.5078707717902462, 0.30346951747815437, 0.1886597107315994]
+[0.7753528189788175, 0.17479473292721065, 0.04985244809397199]
 ```
 
-## Amrican Odds
+## American Odds
 
 ```python
 import goto_conversion
-goto_conversion.goto_conversion([-100, 240, 460], isAmericanOdds = True)
+goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 ```
 
 ```
-[0.5078707717902462, 0.30346951747815437, 0.1886597107315994]
+[0.7753528189788175, 0.17479473292721065, 0.04985244809397199]
 ```
 
 # Experiment Results
