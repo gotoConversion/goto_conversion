@@ -2,6 +2,6 @@ message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Goto"
   given-names: "Kaito"
-title: "Goto Conversion (Novel Conversion of Betting Odds to Probabilities)"
+title: "Novel Conversion of Betting Odds to Probabilities"
 date-released: 2023-08-25
 url: "https://github.com/gotoConversion/goto_conversion"
