@@ -44,13 +44,17 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Experiment Results
 
+The experiment results table directly below is based on 6,000 football matches' betting odds across four different bookmakers.
+
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
-Kaggle notebook to reproduce the table above: https://www.kaggle.com/code/kaito510/novel-conversion-of-football-betting-odds
+Kaggle notebook to reproduce the table directly above: https://www.kaggle.com/code/kaito510/novel-conversion-of-football-betting-odds
+
+The experiment results table directly below is based on 6,348 horse races' betting odds for the win and place markets.
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/RacingExperiment.png?raw=true)
 
-Kaggle notebook to reproduce the table above: https://www.kaggle.com/code/kaito510/novel-conversion-of-horse-racing-odds
+Kaggle notebook to reproduce the table directly above: https://www.kaggle.com/code/kaito510/novel-conversion-of-horse-racing-odds
 
 # References
 
