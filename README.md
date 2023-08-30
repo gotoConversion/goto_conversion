@@ -1,14 +1,14 @@
 # goto_conversion (Novel Conversion of Betting Odds to Probabilities)
 
-The most common method used to convert betting odds to probabilities is to normalize the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
+The most common method used to convert betting odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
 
-To the best of our knowledge, there are two existing methods that attempt to consider the favourite-longshot bias. (i) Shin conversion [[1](#1), [2](#2), [3](#3)] maximizes the expected profit for the bookmakers assuming a small proportion of bettors have inside information. (ii) Power conversion [[4](#4)] raises all inverse odds to the same constant power. However, both of these methods require iterative computation to convert betting odds to probabilities.
+To the best of our knowledge, there are two existing methods that attempt to consider the favourite-longshot bias. (i) Shin conversion [[1](#1), [2](#2), [3](#3)] maximises the expected profit for the bookmakers assuming a small proportion of bettors have inside information. (ii) Power conversion [[4](#4)] raises all inverse odds to the same constant power. However, both of these methods require iterative computation to convert betting odds to probabilities.
 
-Our proposed method (Goto conversion) is significantly more efficient than Shin and Power conversion because it converts betting odds to probabilities directly without iterative computation.
+Our proposed method (goto_conversion) is significantly more efficient than Shin and Power conversion because it converts betting odds to probabilities directly without iterative computation.
 
-The Goto conversion reduces all inverse odds by the same units of margin of error. This attempts to consider the favourite-longshot bias by utilizing the wider margin of errors implied for inverses of longshot odds and vice-versa.
+The goto_conversion reduces all inverse odds by the same units of margin of error. This attempts to consider the favourite-longshot bias by utilising the wider margin of errors implied for inverses of longshot odds and vice-versa.
 
-Furthermore, our tables of experiment results below show that the Goto conversion converts betting odds to probabilities more accurately than all three of these existing methods.
+Furthermore, our tables of experiment results below show that the goto_conversion converts betting odds to probabilities more accurately than all three of these existing methods.
 
 # Installation
 
