@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "goto_conversion"
 version = "0.0.7"
-authors = [{ name = 'Kaito Goto', email = 'https://www.linkedin.com/in/goto/' },]
+authors = [{ name = 'Kaito Goto' },]
 description = "Novel Conversion of Betting Odds to Probabilities"
 readme = "README.md"
 requires-python = ">=3.7"
