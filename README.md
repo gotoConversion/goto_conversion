@@ -42,6 +42,10 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 [0.7753528189788175, 0.17479473292721065, 0.04985244809397199]
 ```
 
+# Pseudo Code
+
+![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/PseudoCode.png?raw=true)
+
 # Experiment Results
 
 The experiment results table directly below is based on the same 6,000 football matches' betting odds across four different bookmakers.
