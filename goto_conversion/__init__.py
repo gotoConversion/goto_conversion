@@ -19,7 +19,7 @@ def goto_conversion(listOfOdds, total = 1, eps = 1e-6, isAmericanOdds = False):
 
     #Computation
     listOfProbabilities = [1/x for x in listOfOdds] #initialize probabilities using inverse odds
-    listOfMoe = [pow((x-x**2)/x,0.5) for x in listOfProbabilities] #compute the margin of error (MOE) for each probability
-    step = (sum(listOfProbabilities) - total)/sum(listOfMoe) #compute how many steps of MOE the probabilities should step back by
-    outputListOfProbabilities = [min(max(x - (y*step),eps),1) for x,y in zip(listOfProbabilities, listOfMoe)]
+    listOfSe = [pow((x-x**2)/x,0.5) for x in listOfProbabilities] #compute the standard error (SE) for each probability
+    step = (sum(listOfProbabilities) - total)/sum(listOfSe) #compute how many steps of SE the probabilities should step back by
+    outputListOfProbabilities = [min(max(x - (y*step),eps),1) for x,y in zip(listOfProbabilities, listOfSe)]
     return outputListOfProbabilities
