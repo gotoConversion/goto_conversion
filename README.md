@@ -44,7 +44,7 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Pseudo Code
 
-![alt text]()
+![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/PseudoCode.png?raw=true)
 
 # Experiment Results
 
