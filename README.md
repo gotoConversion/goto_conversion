@@ -6,7 +6,7 @@ To the best of our knowledge, there are two existing methods that attempt to con
 
 Our proposed method (goto_conversion) is significantly more efficient than Shin and Power conversion because it converts betting odds to probabilities directly without iterative computation.
 
-The goto_conversion reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider margin of errors implied for inverses of longshot odds and vice-versa.
+The goto_conversion reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa.
 
 Furthermore, our tables of experiment results below show that the goto_conversion converts betting odds to probabilities more accurately than all three of these existing methods.
 
