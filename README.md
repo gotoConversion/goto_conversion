@@ -2,7 +2,7 @@
 
 The most common method used to convert betting odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
 
-To the best of our knowledge, there are two existing methods that attempt to consider the favourite-longshot bias. (i) Shin conversion [[1](#1), [2](#2), [3](#3)] maximises the expected profit for the bookmakers assuming a small proportion of bettors have inside information. (ii) Power conversion [[4](#4)] raises all inverse odds to the same constant power. However, both of these methods require iterative computation to convert betting odds to probabilities.
+To the best of our knowledge, there are two existing methods that attempt to consider the favourite-longshot bias. (i) Shin conversion [[1](#1),[2](#2),[3](#3)] maximises the expected profit for the bookmakers assuming a small proportion of bettors have inside information. (ii) Power conversion [[4](#4)] raises all inverse odds to the same constant power. However, both of these methods require iterative computation to convert betting odds to probabilities.
 
 Our proposed method (goto_conversion) is significantly more efficient than Shin and Power conversion because it converts betting odds to probabilities directly without iterative computation.
 
@@ -48,7 +48,7 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Experiment Results
 
-The experiment results table directly below is based on the same 6,000 football matches' betting odds across four different bookmakers.
+The experiment results table directly below is based on the same 6,000 football matches' betting odds (home win, draw or away win) across four different bookmakers.
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
@@ -79,3 +79,9 @@ pp. 934-943.](https://doi.org/10.1016/j.ijforecast.2014.02.008)
 [S. Clarke, S. Kovalchik, M. Ingram, "Adjusting bookmaker’s odds to allow for
 overround". American Journal of Sports Science, 2017, Volume 5, Issue 6,
 pp. 45-49.](https://doi.org/10.11648/j.ajss.20170506.12)
+
+# Contact Me
+
+LinkedIn Message: https://www.linkedin.com/in/goto/
+Kaggle Message: https://www.kaggle.com/kaito510/competitions
+Or fire an issue on this repo.
