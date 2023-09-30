@@ -23,3 +23,9 @@ def goto_conversion(listOfOdds, total = 1, eps = 1e-6, isAmericanOdds = False):
     step = (sum(listOfProbabilities) - total)/sum(listOfSe) #compute how many steps of SE the probabilities should step back by
     outputListOfProbabilities = [min(max(x - (y*step),eps),1) for x,y in zip(listOfProbabilities, listOfSe)]
     return outputListOfProbabilities
+
+def zero_sum(listOfPrices, listOfVolumes):
+    listOfSe = [x**0.5 for x in listOfVolumes] #compute standard errors assuming standard deviation is same for all stocks
+    step = sum(listOfPrices)/sum(listOfSe)
+    outputListOfPrices = [x - (y*step) for x,y in zip(listOfPrices, listOfSe)]
+    return outputListOfPrices
