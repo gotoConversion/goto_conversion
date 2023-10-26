@@ -1,4 +1,4 @@
-# goto_conversion (Novel Conversion of Betting Odds to Probabilities)
+# goto_conversion: Novel Conversion of Betting Odds to Probabilities
 
 The most common method used to convert betting odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
 
@@ -85,5 +85,3 @@ pp. 45-49.](https://doi.org/10.11648/j.ajss.20170506.12)
 LinkedIn Message: https://www.linkedin.com/in/goto/
 
 Kaggle Message: https://www.kaggle.com/kaito510/competitions
-
-Or fire an issue on this repo.
