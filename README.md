@@ -8,7 +8,7 @@ Our proposed method (goto_conversion) is significantly more efficient than Shin 
 
 The goto_conversion reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa.
 
-Furthermore, our tables of experiment results below show that the goto_conversion converts betting odds to probabilities more accurately than all three of these existing methods.
+Furthermore, our tables of experiment results show that the goto_conversion converts betting odds to probabilities more accurately than all three of these existing methods.
 
 The favourite-longshot bias is not limited to gambling markets, it exists in stock markets too. Thus, we applied the original goto_conversion to stock markets by defining the zero_sum variant. Under the same philosophy as the original goto_conversion, zero_sum adjusts all predicted stock prices (e.g. weighted average price) by the same units of standard error to ensure all predicted stock prices relative to the index price (e.g. weighted average nasdaq price) sum to zero. This attempts to consider the favourite-longshot bias by utilising the wider standard errors implied for predicted stock prices with low trade volume and vice-versa.
 
