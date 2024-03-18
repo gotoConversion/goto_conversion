@@ -84,4 +84,4 @@ pp. 45-49.](https://doi.org/10.11648/j.ajss.20170506.12)
 
 # Contact Me
 
-Kaggle Message: https://www.kaggle.com/kaito510/competitions
+via kaggle message: https://www.kaggle.com/kaito510/competitions
