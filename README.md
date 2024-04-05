@@ -85,3 +85,9 @@ pp. 45-49.](https://doi.org/10.11648/j.ajss.20170506.12)
 # Contact Me
 
 via kaggle message: https://www.kaggle.com/kaito510/competitions
+
+# Q&A
+
+Q1. I want to know whether the teams in the csv file named mensProbabilitiesTable in the 538 data you created are in 2024 or 2023?
+
+A1. 2024 but it is NOT 538 data, it is my data displayed in a format inspired by 538.
