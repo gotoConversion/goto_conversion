@@ -1,4 +1,4 @@
-# `goto_conversion`: Novel Conversion of Betting Odds to Probabilities
+# goto_conversion: Novel Conversion of Betting Odds to Probabilities
 
 The most common method used to convert betting odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
 
@@ -46,19 +46,19 @@ import `goto_conversion`
 
 # Pseudo Code
 
-![alt text](https://github.com/gotoConversion/`goto_conversion`/blob/main/PseudoCode.png?raw=true)
+![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/PseudoCode.png?raw=true)
 
 # Experiment Results
 
 The experiment results table directly below is based on the same 6,000 football matches' betting odds (home win, draw or away win) across four different bookmakers.
 
-![alt text](https://github.com/gotoConversion/`goto_conversion`/blob/main/FballExperiment.png?raw=true)
+![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
 Kaggle notebook to reproduce the table directly above: https://www.kaggle.com/code/kaito510/novel-conversion-of-football-betting-odds
 
 The experiment results table directly below is based on 6,348 horse races' betting odds for the win and place markets.
 
-![alt text](https://github.com/gotoConversion/`goto_conversion`/blob/main/RacingExperiment.png?raw=true)
+![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/RacingExperiment.png?raw=true)
 
 Kaggle notebook to reproduce the table directly above: https://www.kaggle.com/code/kaito510/novel-conversion-of-horse-racing-odds
 
