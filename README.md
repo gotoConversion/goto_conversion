@@ -25,8 +25,8 @@ pip install goto-conversion
 ## Decimal Odds
 
 ```python
-import `goto_conversion`
-`goto_conversion`.`goto_conversion`([1.2, 3.4, 5.6])
+import goto_conversion
+goto_conversion.goto_conversion([1.2, 3.4, 5.6])
 ```
 
 ```
@@ -36,8 +36,8 @@ import `goto_conversion`
 ## American Odds
 
 ```python
-import `goto_conversion`
-`goto_conversion`.`goto_conversion`([-500, 240, 460], isAmericanOdds = True)
+import goto_conversion
+goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 ```
 
 ```
