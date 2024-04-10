@@ -1,16 +1,16 @@
-# goto_conversion: Novel Conversion of Betting Odds to Probabilities
+# `goto_conversion`: Novel Conversion of Betting Odds to Probabilities
 
 The most common method used to convert betting odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
 
 To the best of our knowledge, there are two existing methods that attempt to consider the favourite-longshot bias. (i) Shin conversion [[1](#1),[2](#2),[3](#3)] maximises the expected profit for the bookmakers assuming a small proportion of bettors have inside information. (ii) Power conversion [[4](#4)] raises all inverse odds to the same constant power. However, both of these methods require iterative computation to convert betting odds to probabilities.
 
-Our proposed method (goto_conversion) is significantly more efficient than Shin and Power conversion because it converts betting odds to probabilities directly without iterative computation.
+Our proposed method (`goto_conversion`) is significantly more efficient than Shin and Power conversion because it converts betting odds to probabilities directly without iterative computation.
 
-The goto_conversion reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa.
+The `goto_conversion` reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa.
 
-Furthermore, our tables of experiment results show that the goto_conversion converts betting odds to probabilities more accurately than all three of these existing methods.
+Furthermore, our tables of experiment results show that the `goto_conversion` converts betting odds to probabilities more accurately than all three of these existing methods.
 
-The favourite-longshot bias is not limited to gambling markets, it exists in stock markets too. Thus, we applied the original goto_conversion to stock markets by defining the zero_sum variant. Under the same philosophy as the original goto_conversion, zero_sum adjusts all predicted stock prices (e.g. weighted average price) by the same units of standard error to ensure all predicted stock prices relative to the index price (e.g. weighted average nasdaq price) sum to zero. This attempts to consider the favourite-longshot bias by utilising the wider standard errors implied for predicted stock prices with low trade volume and vice-versa.
+The favourite-longshot bias is not limited to gambling markets, it exists in stock markets too. Thus, we applied the original `goto_conversion` to stock markets by defining the `zero_sum` variant. Under the same philosophy as the original `goto_conversion`, `zero_sum` adjusts all predicted stock prices (e.g. weighted average price) by the same units of standard error to ensure all predicted stock prices relative to the index price (e.g. weighted average nasdaq price) sum to zero. This attempts to consider the favourite-longshot bias by utilising the wider standard errors implied for predicted stock prices with low trade volume and vice-versa.
 
 # Installation
 
@@ -25,8 +25,8 @@ pip install goto-conversion
 ## Decimal Odds
 
 ```python
-import goto_conversion
-goto_conversion.goto_conversion([1.2, 3.4, 5.6])
+import `goto_conversion`
+`goto_conversion`.`goto_conversion`([1.2, 3.4, 5.6])
 ```
 
 ```
@@ -36,8 +36,8 @@ goto_conversion.goto_conversion([1.2, 3.4, 5.6])
 ## American Odds
 
 ```python
-import goto_conversion
-goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
+import `goto_conversion`
+`goto_conversion`.`goto_conversion`([-500, 240, 460], isAmericanOdds = True)
 ```
 
 ```
@@ -46,19 +46,19 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Pseudo Code
 
-![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/PseudoCode.png?raw=true)
+![alt text](https://github.com/gotoConversion/`goto_conversion`/blob/main/PseudoCode.png?raw=true)
 
 # Experiment Results
 
 The experiment results table directly below is based on the same 6,000 football matches' betting odds (home win, draw or away win) across four different bookmakers.
 
-![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
+![alt text](https://github.com/gotoConversion/`goto_conversion`/blob/main/FballExperiment.png?raw=true)
 
 Kaggle notebook to reproduce the table directly above: https://www.kaggle.com/code/kaito510/novel-conversion-of-football-betting-odds
 
 The experiment results table directly below is based on 6,348 horse races' betting odds for the win and place markets.
 
-![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/RacingExperiment.png?raw=true)
+![alt text](https://github.com/gotoConversion/`goto_conversion`/blob/main/RacingExperiment.png?raw=true)
 
 Kaggle notebook to reproduce the table directly above: https://www.kaggle.com/code/kaito510/novel-conversion-of-horse-racing-odds
 
