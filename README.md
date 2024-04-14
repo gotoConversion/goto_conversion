@@ -18,7 +18,7 @@ The favourite-longshot bias is not limited to gambling markets, it exists in sto
 
 [1xGold and 2xSilver Medal Winning Public Solution from 2019 to 2022 March Mania Kaggle Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient)
 
-[Bronze Medal Winning Public Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient)
+[15xBronze Medal Winning Public Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient)
 
 # Installation
 
