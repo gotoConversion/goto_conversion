@@ -16,6 +16,8 @@ The favourite-longshot bias is not limited to gambling markets, it exists in sto
 
 [Most Voted Public Solution from 2024 Optiver Kaggle Competition](https://www.kaggle.com/code/ravi20076/optiver-baseline-models?scriptVersionId=152991375)
 
+[Gold Medal Winning Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101)
+
 [1xGold and 2xSilver Medal Winning Public Solution from 2019 to 2022 March Mania Kaggle Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient)
 
 [15xBronze Medal Winning Public Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient)
