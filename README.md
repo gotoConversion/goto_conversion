@@ -64,17 +64,15 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Experiment Results
 
-The experiment results table directly below is based on the same 6,000 football matches' betting odds (home win, draw or away win) across four different bookmakers.
+Brier Score was mainly used to evaluate the accuracy of the probabilities implied by each conversion method. The Brier Score is essentially the mean squared error of the probabilities relative to the ground truth. Ranked Probability Score (RPS) was additionally used to evaluate the probabilities for football betting odds because the outcome is ordinal (home win, draw and away win). RPS is essentially the Brier Score on the cumulative probabilities.
+
+The experiment results table directly below is based on the same 6,000 football matches' betting odds (home win, draw or away win) across four different bookmakers. `goto_conversion` outperforms all other conversion methods for all four bookmakers. Kaggle notebook to reproduce the table directly below can be found [here](https://www.kaggle.com/code/kaito510/novel-conversion-of-football-betting-odds).
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
-Kaggle notebook to reproduce the table directly above: https://www.kaggle.com/code/kaito510/novel-conversion-of-football-betting-odds
-
-The experiment results table directly below is based on 6,348 horse races' betting odds for the win and place markets.
+The experiment results table directly below is based on 6,348 horse races' betting odds for the win and place markets. `goto_conversion` outperforms all other conversion methods for both win and place betting markets. Kaggle notebook to reproduce the table directly below can be found [here](https://www.kaggle.com/code/kaito510/novel-conversion-of-horse-racing-odds).
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/RacingExperiment.png?raw=true)
-
-Kaggle notebook to reproduce the table directly above: https://www.kaggle.com/code/kaito510/novel-conversion-of-horse-racing-odds
 
 # References
 
