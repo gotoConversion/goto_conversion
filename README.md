@@ -1,4 +1,4 @@
-# goto_conversion (Gambling Odds To Outcome probabilities Conversion)
+# Gambling Odds To Outcome probabilities Conversion (goto_conversion)
 
 The most common method used to convert betting odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
 
