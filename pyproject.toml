@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "goto_conversion"
-version = "0.2.0"
+version = "0.3.0"
 authors = [{ name = 'Kaito Goto' },]
-description = "Novel Conversion of Betting Odds to Probabilities"
+description = "Gambling Odds To Outcome probabilities Conversion (goto_conversion)"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
