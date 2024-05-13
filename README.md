@@ -14,17 +14,12 @@ The favourite-longshot bias is not limited to gambling markets, it exists in sto
 
 # goto_conversion was leveraged by:
 
-[Most Voted Solution from 2023 Optiver Kaggle Competition](https://www.kaggle.com/code/ravi20076/optiver-baseline-models?scriptVersionId=152991375)
-
-[Gold Medal Winning (14th out of 3225) Solution from 2023 Optiver Kaggle Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653)
-
-[Gold Medal Winning (3rd out of 821) Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101)
-
-[Gold Medal Winning (4th out of 821) Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407)
-
-[1xGold and 2xSilver Medal Winning Solution from 2019 to 2022 March Mania Kaggle Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient)
-
-[15xBronze Medal Winning (86th to 100th place out of 821) Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient)
+- [Most Voted Solution from 2023 Optiver Kaggle Competition](https://www.kaggle.com/code/ravi20076/optiver-baseline-models?scriptVersionId=152991375)
+- [Gold Medal Winning (14th out of 3225) Solution from 2023 Optiver Kaggle Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653)
+- [Gold Medal Winning (3rd out of 821) Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101)
+- [Gold Medal Winning (4th out of 821) Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407)
+- [1xGold and 2xSilver Medal Winning Solution from 2019 to 2022 March Mania Kaggle Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient)
+- [15xBronze Medal Winning (86th to 100th place out of 821) Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient)
 
 # Installation
 
