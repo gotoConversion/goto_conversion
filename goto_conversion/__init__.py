@@ -1,4 +1,4 @@
-def goto_conversion(listOfOdds, total = 1, alpha = 1, beta = 1, eps = 1e-6, isAmericanOdds = False):
+def goto_conversion(listOfOdds, total = 1, multiplicativeIfUnprudentOdds = False, isAmericanOdds = False):
 
     #Convert American Odds to Decimal Odds
     if isAmericanOdds:
@@ -19,9 +19,16 @@ def goto_conversion(listOfOdds, total = 1, alpha = 1, beta = 1, eps = 1e-6, isAm
 
     #Computation
     listOfProbabilities = [1/x for x in listOfOdds] #initialize probabilities using inverse odds
-    listOfSe = [pow((x-x**2)/((x**alpha)/beta),0.5) for x in listOfProbabilities] #compute the standard error (SE) for each probability
+    listOfSe = [pow((x-x**2)/x,0.5) for x in listOfProbabilities] #compute the standard error (SE) for each probability
     step = (sum(listOfProbabilities) - total)/sum(listOfSe) #compute how many steps of SE the probabilities should step back by
-    outputListOfProbabilities = [min(max(x - (y*step),eps),1) for x,y in zip(listOfProbabilities, listOfSe)]
+    outputListOfProbabilities = [x - (y*step) for x,y in zip(listOfProbabilities, listOfSe)]
+    if any(0 >= x for x in outputListOfProbabilities) or (sum(listOfProbabilities) <= 1):
+        if multiplicativeIfUnprudentOdds:
+            normalizer = sum(listOfProbabilities)/total
+            outputListOfProbabilities = [x/normalizer for x in listOfProbabilities]
+        else:
+            print('Odds must have a positive low bookmaker margin to be prudent.')
+            raise ValueError('Set multiplicativeIfUnprudentOdds argument to True to use multiplicative conversion for unrpudent odds.')
     return outputListOfProbabilities
 
 def zero_sum(listOfPrices, listOfVolumes):
