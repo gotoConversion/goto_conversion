@@ -65,7 +65,7 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Experiment Results
 
-The Brier Score is essentially the mean squared error of the probabilities relative to the ground truth. The experiment results table below is based on the same ~200,000 football matches' gambling odds (home win, draw or away win) across 12 different bookmakers. `goto_conversion` outperforms all other conversion methods for all 12 bookmakers under the Brier Score. 7 out of the 12 are significant outperformances and 5 out of 12 are insignificant outperformances likely due to a lack of sample size.
+The Brier Score is essentially the mean squared error of the probabilities relative to the ground truth. The experiment results table below is based on the same ~200,000 football matches' gambling odds (home win, draw or away win) across 12 different bookmakers. `goto_conversion` outperforms all other conversion methods for all 12 bookmakers under the Brier Score. 7 out of the 12 are significant outperformances and 5 out of 12 are insignificant outperformances. The latter is likely due to a lack of sample size.
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
