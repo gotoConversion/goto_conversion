@@ -65,9 +65,7 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Experiment Results
 
-Brier Score was mainly used to evaluate the accuracy of the probabilities implied by each conversion method. The Brier Score is essentially the mean squared error of the probabilities relative to the ground truth. Ranked Probability Score (RPS) was additionally used to evaluate the probabilities for football gambling odds because the outcome is ordinal (home win, draw and away win). RPS is essentially the Brier Score on the cumulative probabilities.
-
-The experiment results table below is based on the same 6,000 football matches' gambling odds (home win, draw or away win) across four different bookmakers. `goto_conversion` outperforms all other conversion methods for all four bookmakers under both Brier Score and RPS. Kaggle notebook to reproduce the table below can be found [here](https://www.kaggle.com/code/kaito510/novel-conversion-of-football-betting-odds).
+Brier Score was mainly used to evaluate the accuracy of the probabilities implied by each conversion method. The Brier Score is essentially the mean squared error of the probabilities relative to the ground truth. The experiment results table below is based on the same 200,000 football matches' gambling odds (home win, draw or away win) across 12 different bookmakers. `goto_conversion` outperforms all other conversion methods for all 12 bookmakers under the Brier Score. 7 out of the 12 are significant outperformances and 5 out of 12 are insignificant outperformances likely due to a lack of sample size.
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
