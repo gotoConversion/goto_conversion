@@ -1,14 +1,14 @@
 # Gambling Odds To Outcome probabilities Conversion (goto_conversion)
 
-The most common method used to convert betting odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
+The most common method used to convert gambling odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
 
-To the best of our knowledge, there are two existing methods that attempt to consider the favourite-longshot bias. (i) Shin conversion [[1](#1),[2](#2),[3](#3)] maximises the expected profit for the bookmakers assuming a small proportion of bettors have inside information. (ii) Power conversion [[4](#4)] raises all inverse odds to the same constant power. However, both of these methods require iterative computation to convert betting odds to probabilities.
+To the best of our knowledge, there are two existing methods that attempt to consider the favourite-longshot bias. (i) Shin conversion [[1](#1),[2](#2),[3](#3)] maximises the expected profit for the bookmakers assuming a small proportion of bettors have inside information. (ii) Power conversion [[4](#4)] raises all inverse odds to the same constant power. However, both of these methods require iterative computation to convert gambling odds to probabilities.
 
-Our proposed method, **G**ambling **O**dds **T**o **O**utcome probabilities **Conversion** (`goto_conversion`) is significantly more efficient than Shin and Power conversion because it converts betting odds to probabilities directly without iterative computation.
+Our proposed method, **G**ambling **O**dds **T**o **O**utcome probabilities **Conversion** (`goto_conversion`) is significantly more efficient than Shin and Power conversion because it converts gambling odds to probabilities directly without iterative computation.
 
 The `goto_conversion` reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa.
 
-Furthermore, our table of experiment results show that the `goto_conversion` converts betting odds to probabilities more accurately than all three of these existing methods.
+Furthermore, our table of experiment results show that the `goto_conversion` converts gambling odds to probabilities more accurately than all three of these existing methods.
 
 The favourite-longshot bias is not limited to gambling markets, it exists in stock markets too. Thus, we applied the original `goto_conversion` to stock markets by defining the `zero_sum` variant. Under the same philosophy as the original `goto_conversion`, `zero_sum` adjusts all predicted stock prices (e.g. weighted average price) by the same units of standard error to ensure all predicted stock prices relative to the index price (e.g. weighted average nasdaq price) sum to zero. This attempts to consider the favourite-longshot bias by utilising the wider standard errors implied for predicted stock prices with low trade volume and vice-versa.
 
@@ -65,9 +65,9 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Experiment Results
 
-Brier Score was mainly used to evaluate the accuracy of the probabilities implied by each conversion method. The Brier Score is essentially the mean squared error of the probabilities relative to the ground truth. Ranked Probability Score (RPS) was additionally used to evaluate the probabilities for football betting odds because the outcome is ordinal (home win, draw and away win). RPS is essentially the Brier Score on the cumulative probabilities.
+Brier Score was mainly used to evaluate the accuracy of the probabilities implied by each conversion method. The Brier Score is essentially the mean squared error of the probabilities relative to the ground truth. Ranked Probability Score (RPS) was additionally used to evaluate the probabilities for football gambling odds because the outcome is ordinal (home win, draw and away win). RPS is essentially the Brier Score on the cumulative probabilities.
 
-The experiment results table below is based on the same 6,000 football matches' betting odds (home win, draw or away win) across four different bookmakers. `goto_conversion` outperforms all other conversion methods for all four bookmakers under both Brier Score and RPS. Kaggle notebook to reproduce the table below can be found [here](https://www.kaggle.com/code/kaito510/novel-conversion-of-football-betting-odds).
+The experiment results table below is based on the same 6,000 football matches' gambling odds (home win, draw or away win) across four different bookmakers. `goto_conversion` outperforms all other conversion methods for all four bookmakers under both Brier Score and RPS. Kaggle notebook to reproduce the table below can be found [here](https://www.kaggle.com/code/kaito510/novel-conversion-of-football-betting-odds).
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
@@ -79,7 +79,7 @@ traders, and the Favorite-Longshot Bias”. The Economic
 Journal, 1992, 102, pp. 426-435.](https://doi.org/10.2307/2234526)
 
 <a id="2">[2]</a>
-[E. Štrumbelj, "On determining probability forecasts from betting odds".
+[E. Štrumbelj, "On determining probability forecasts from gambling odds".
 International Journal of Forecasting, 2014, Volume 30, Issue 4,
 pp. 934-943.](https://doi.org/10.1016/j.ijforecast.2014.02.008)
 
