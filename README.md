@@ -65,7 +65,9 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Experiment Results
 
-The Brier Score is essentially the mean squared error of the predicted probabilities relative to the ground truth. The experiment results table below is based on the same ~200,000 football matches' gambling odds (home win, draw or away win) across 12 different bookmakers. `goto_conversion` outperforms all other conversion methods for all 12 bookmakers under the Brier Score. 7 out of the 12 are significant outperformances and 5 out of 12 are insignificant outperformances. The latter is likely due to a lack of sample size.
+The Brier Score is essentially the mean squared error of the predicted probabilities relative to the ground truth. The experiment results table below is based on the same ~200,000 football matches' gambling odds (home win, draw or away win) across 12 different bookmakers from football-data.co.uk [[5](#5)].
+
+`goto_conversion` outperforms all other conversion methods for all 12 bookmakers under the Brier Score. 7 out of the 12 are significant outperformances and 5 out of 12 are insignificant outperformances. The latter is likely due to a lack of sample size.
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
@@ -88,6 +90,9 @@ pp. 934-943.](https://doi.org/10.1016/j.ijforecast.2014.02.008)
 [S. Clarke, S. Kovalchik, M. Ingram, "Adjusting bookmaker’s odds to allow for
 overround". American Journal of Sports Science, 2017, Volume 5, Issue 6,
 pp. 45-49.](https://doi.org/10.11648/j.ajss.20170506.12)
+
+<a id="5">[5]</a>
+[Football-Data](https://www.football-data.co.uk/)
 
 # Contact Me
 
