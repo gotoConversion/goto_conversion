@@ -2,13 +2,13 @@
 
 The most common method used to convert gambling odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
 
-To the best of our knowledge, there are two existing methods that attempt to consider the favourite-longshot bias. (i) Shin conversion [[1](#1),[2](#2),[3](#3)] maximises the expected profit for the bookmakers assuming a small proportion of bettors have inside information. (ii) Power conversion [[4](#4)] raises all inverse odds to the same constant power. However, both of these methods require iterative computation to convert gambling odds to probabilities.
+To the best of our knowledge, there are two existing methods that attempt to consider the favourite-longshot bias. (i) Shin conversion [[1](#1),[2](#2),[3](#3)] maximises the expected profit for the bookmakers assuming a small proportion of bettors have inside information. (ii) Power conversion [[4](#4)] raises all inverse odds to the same constant power.
 
-Our proposed method, **G**ambling **O**dds **T**o **O**utcome probabilities **Conversion** (`goto_conversion`) is significantly more efficient than Shin and Power conversion because it converts gambling odds to probabilities directly without iterative computation.
+Our proposed method, **G**ambling **O**dds **T**o **O**utcome probabilities **Conversion** (`goto_conversion`) reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa.
 
-The `goto_conversion` reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa.
+Our table of experiment results shows `goto_conversion` converts gambling odds to probabilities more accurately than all three of these existing methods.
 
-Furthermore, our table of experiment results show that the `goto_conversion` converts gambling odds to probabilities more accurately than all three of these existing methods.
+This package is an implementation of `goto_conversion` as well as `efficient_shin_conversion`. The Shin conversion is originally a numerical solution but according to Kizildemir 2024 [[6](#6)], we can enhance its efficiency by reduction to an analytical solution. We have implemented the enhanced Shin conversion proposed by Kizildemir 2024 as `efficient_shin_conversion` in this package.
 
 The favourite-longshot bias is not limited to gambling markets, it exists in stock markets too. Thus, we applied the original `goto_conversion` to stock markets by defining the `zero_sum` variant. Under the same philosophy as the original `goto_conversion`, `zero_sum` adjusts all predicted stock prices (e.g. weighted average price) by the same units of standard error to ensure all predicted stock prices relative to the index price (e.g. weighted average nasdaq price) sum to zero. This attempts to consider the favourite-longshot bias by utilising the wider standard errors implied for predicted stock prices with low trade volume and vice-versa.
 
@@ -59,6 +59,35 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 [0.7753528189788175, 0.17479473292721065, 0.04985244809397199]
 ```
 
+## Numpy array inputs will return numpy array outputs
+
+```python
+import goto_conversion
+Import numpy as np
+goto_conversion.goto_conversion(np.array([1.2, 3.4, 5.6]))
+```
+
+```
+[0.77535282 0.17479473 0.04985245]
+```
+
+## Test cases for `efficient_shin_conversion`
+
+```python
+import goto_conversion
+print(goto_conversion.efficient_shin_conversion([1.22,4.57,6.54]))
+print(goto_conversion.efficient_shin_conversion([1.22,4.63,6.38]))
+print(goto_conversion.efficient_shin_conversion([1.17,4.97,7.57]))
+```
+
+```
+[0.8005889182988829, 0.13614976602243348, 0.0632613156786835]
+[0.8004787158953608, 0.1325348922189233, 0.0669863918857159]
+[0.8396249156189404, 0.11832615760257503, 0.04204892677848464]
+```
+
+Notice the printed probability lists match the first three rows of table 1 of Kizildemir 2024 [[6](#6)].
+
 # Pseudo Code
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/PseudoCode.png?raw=true)
@@ -67,7 +96,7 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 The experiment results table below evaluates each conversion method's predicted probabilities based on ~200,000 football matches' gambling odds (home win, draw or away win) across 8 different bookmakers that had at least 12 seasons of data on football-data.co.uk [[5](#5)].
 
-`goto_conversion` significantly outperforms all other conversion methods for all 8 bookmakers with just one exception. `goto_conversion` outperforms `shin_conversion` for only 6 out of the 12 seasons under the Pinnacle Sports (PS) bookmaker which implied an insignificant p-value of exactly 0.5.
+`goto_conversion` significantly outperforms all other conversion methods for all 8 bookmakers with just one exception. `goto_conversion` outperforms `efficient_shin_conversion` for only 6 out of the 12 seasons under the Pinnacle Sports (PS) bookmaker which implied an insignificant p-value of exactly 0.5.
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
@@ -93,6 +122,9 @@ pp. 45-49.](https://doi.org/10.11648/j.ajss.20170506.12)
 
 <a id="5">[5]</a>
 [Football-Data](https://www.football-data.co.uk/)
+
+<a id="6">[6]</a>
+[Kizildemir, M., Akin, E., & Alkan, A. (2024). A Family of Solutions Related to Shin’s Model For Probability Forecasts. Cambridge Open Engage](https://doi.org/10.33774/coe-2024-dwb6t)
 
 # Contact Me
 
