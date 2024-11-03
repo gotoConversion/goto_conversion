@@ -65,9 +65,9 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 # Experiment Results
 
-The Mean Brier Score is essentially the Mean Squared Error of the predicted probabilities relative to the ground truth. The experiment results table below evaluates the Mean Brier Score of each conversion method's predicted probabilities based on the same ~200,000 football matches' gambling odds (home win, draw or away win) across 12 different bookmakers from football-data.co.uk [[5](#5)].
+The experiment results table below evaluates each conversion method's predicted probabilities based on ~200,000 football matches' gambling odds (home win, draw or away win) across 8 different bookmakers that had at least 12 seasons of data on football-data.co.uk [[5](#5)].
 
-`goto_conversion` outperforms all other conversion methods for all 12 bookmakers under the Mean Brier Score. 7 out of the 12 are significant outperformances and 5 out of 12 are insignificant outperformances. The latter is likely due to a lack of sample size.
+`goto_conversion` outperforms all other conversion methods for all 8 bookmakers with just one exception. `goto_conversion` outperforms `efficient_shin_conversion` for 6 out of the 12 seasons which implied an insignificant p-value of exactly 0.5.
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
 
