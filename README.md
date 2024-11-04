@@ -86,7 +86,7 @@ print(goto_conversion.efficient_shin_conversion([1.17,4.97,7.57]))
 [0.8396249156189404, 0.11832615760257503, 0.04204892677848464]
 ```
 
-Notice the printed probability lists match the first three rows of table 1 of Kizildemir 2024 [[6](#6)].
+Notice the printed probability lists match the first three rows of table 1 in Kizildemir 2024 [[6](#6)].
 
 # Pseudo Code
 
