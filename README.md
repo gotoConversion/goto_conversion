@@ -63,7 +63,7 @@ goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
 
 ```python
 import goto_conversion
-Import numpy as np
+import numpy as np
 goto_conversion.goto_conversion(np.array([1.2, 3.4, 5.6]))
 ```
 
