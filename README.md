@@ -18,7 +18,7 @@ The favourite-longshot bias is not limited to gambling markets, it exists in sto
 
 # Applications on Kaggle
 
-To the best of my knowledge, on Kaggle, at least four gold medal solutions and many other medal solutions have publicly stated that they leveraged `goto_conversion`:
+To the best of my knowledge, on Kaggle, at least four gold medal solutions and many other medal solutions have publicly stated that they applied `goto_conversion` in their solution:
 - [Gold Medal Winning (3rd out of 821) Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101)
 - [Gold Medal Winning (4th out of 821) Solution from 2024 March Mania Kaggle Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407)
 - [1xGold and 2xSilver Medal Winning Solution from 2019 to 2022 March Mania Kaggle Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient)
