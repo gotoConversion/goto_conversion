@@ -1,4 +1,4 @@
-# Gambling Odds To Outcome probabilities Conversion (goto_conversion)
+# Gambling Odds To Outcome probabilities Conversion (`goto_conversion`) and Faster Shin's Method (`efficient_shin_conversion`)
 
 The most common method used to convert gambling odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
 
