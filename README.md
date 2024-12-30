@@ -92,14 +92,6 @@ Notice the printed probability lists match the first three rows of table 1 in Ki
 
 ![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/PseudoCode.png?raw=true)
 
-# Experiment Results
-
-The experiment results table below evaluates each conversion method's predicted probabilities based on ~200,000 football matches' gambling odds (home win, draw or away win) across 8 different bookmakers that had at least 12 seasons of data on football-data.co.uk [[5](#5)].
-
-`goto_conversion` significantly outperforms all other conversion methods for all 8 bookmakers with just one exception. `goto_conversion` outperforms `efficient_shin_conversion` for only 6 out of the 12 seasons under the Pinnacle Sports (PS) bookmaker which implied an insignificant p-value of exactly 0.5.
-
-![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/FballExperiment.png?raw=true)
-
 # References
 
 <a id="1">[1]</a> 
