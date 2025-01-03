@@ -4,9 +4,7 @@ The most common method used to convert gambling odds to probabilities is to norm
 
 To the best of our knowledge, there are two existing methods that attempt to consider the favourite-longshot bias. (i) Shin conversion [[1](#1),[2](#2),[3](#3)] maximises the expected profit for the bookmakers assuming a small proportion of bettors have inside information. (ii) Power conversion [[4](#4)] raises all inverse odds to the same constant power.
 
-Our proposed method, **G**ambling **O**dds **T**o **O**utcome probabilities **Conversion** (`goto_conversion`) reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa.
-
-Our table of experiment results shows `goto_conversion` converts gambling odds to probabilities more accurately than all three of these existing methods.
+Our proposed method, **G**ambling **O**dds **T**o **O**utcome probabilities **Conversion** (`goto_conversion`) reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa. Our experiments show `goto_conversion` converts gambling odds to probabilities more robustly than all three of these existing methods.
 
 This package is an implementation of `goto_conversion` as well as `efficient_shin_conversion`. The Shin conversion is originally a numerical solution but according to Kizildemir 2024 [[6](#6)], we can enhance its efficiency by reduction to an analytical solution. We have implemented the enhanced Shin conversion proposed by Kizildemir 2024 as `efficient_shin_conversion` in this package.
 
