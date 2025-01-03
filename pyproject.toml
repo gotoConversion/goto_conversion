@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "goto_conversion"
-version = "2.0.0"
+version = "2.0.1"
 authors = [{ name = 'Kaito Goto' },]
 description = "Gambling Odds To Outcome probabilities Conversion (goto_conversion)"
 readme = "README.md"
