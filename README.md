@@ -1,7 +1,5 @@
 # `goto_conversion` - Used by 4+ Gold Medal Solutions on Kaggle
 
-# Applications on Kaggle
-
 To the best of our knowledge, on Kaggle, at least four gold medal solutions and many other medal solutions have publicly stated that they applied `goto_conversion` in their solution:
 - [Gold Medal Winning (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653)
 - [1xGold and 2xSilver Medal Winning Solution from 2019 to 2022 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient)
