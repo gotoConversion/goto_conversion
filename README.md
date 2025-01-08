@@ -1,4 +1,4 @@
-# goto_conversion - Used by 4+ Gold Medal Solutions on Kaggle
+# `goto_conversion` - Used by 4+ Gold Medal Solutions on Kaggle
 
 The most common method used to convert gambling odds to probabilities is to normalise the inverse odds (Multiplicative conversion). However, this method does not consider the favourite-longshot bias. 
 
