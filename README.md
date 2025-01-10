@@ -1,13 +1,13 @@
 # `goto_conversion` - Used by 4+ Gold Medal Solutions on Kaggle
 
 To the best of our knowledge, on Kaggle, at least four gold medal solutions and many other medal solutions have publicly stated that they applied `goto_conversion` in their solution:
-- [Gold Medal Winning (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653)
-- [1xGold and 2xSilver Medal Winning Solution from 2019 to 2022 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient)
-- [Gold Medal Winning (3rd out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101)
-- [Gold Medal Winning (4th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407)
-- [Silver Medal Winning (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879)
-- [15xBronze Medal Winning (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient)
-- [Most Voted Solution from 2023 Stock Market Prediction Competition](https://www.kaggle.com/code/ravi20076/optiver-baseline-models?scriptVersionId=152991375)
+- :1st_place_medal: [Gold Medal Winning (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653)
+- :1st_place_medal::2nd_place_medal::2nd_place_medal: [1xGold and 2xSilver Medal Winning Solution from 2019 to 2022 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient)
+- :1st_place_medal: [Gold Medal Winning (3rd out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101)
+- :1st_place_medal: [Gold Medal Winning (4th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407)
+- :2nd_place_medal: [Silver Medal Winning (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879)
+- 15x :3rd_place_medal: [15xBronze Medal Winning (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient)
+- :+1: [Most Voted Solution from 2023 Stock Market Prediction Competition](https://www.kaggle.com/code/ravi20076/optiver-baseline-models?scriptVersionId=152991375)
 
 # Abstract
 
