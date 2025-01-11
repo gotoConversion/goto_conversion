@@ -116,7 +116,7 @@ pp. 45-49.](https://doi.org/10.11648/j.ajss.20170506.12)
 <a id="6">[6]</a>
 [goto_conversion's Kaggle Profile](https://www.kaggle.com/kaito510)
 
-<a id="7">[6]</a>
+<a id="7">[7]</a>
 [Kaggle Main Page](https://www.kaggle.com)
 
 # Contact Me
