@@ -1,13 +1,13 @@
 # `goto_conversion` - Used by 4+ Gold Medal Solutions on Kaggle
 
-To the best of our knowledge, on Kaggle, at least four gold medal solutions and many other medal solutions have publicly stated that they applied `goto_conversion` in their solution:
-- :1st_place_medal: [Gold Medal Winning (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653)
-- :1st_place_medal::2nd_place_medal::2nd_place_medal: [1xGold and 2xSilver Medal Winning Solution from 2019 to 2022 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient)
-- :1st_place_medal: [Gold Medal Winning (3rd out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101)
-- :1st_place_medal: [Gold Medal Winning (4th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407)
-- :1st_place_medal: [Most Voted Solution from 2023 Stock Market Prediction Competition](https://www.kaggle.com/code/ravi20076/optiver-baseline-models?scriptVersionId=152991375)
-- :2nd_place_medal: [Silver Medal Winning (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879)
-- 15x :3rd_place_medal: [15xBronze Medal Winning (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient)
+`goto_conversion` has been a leverage for at least four :1st_place_medal: gold-medal-winning solutions and many other medal-winning solutions on Kaggle [[6](#6),[7](#7)]. They include:
+- :1st_place_medal: [Gold Medal Winning (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653) :chart_with_upwards_trend:
+- :1st_place_medal::2nd_place_medal::2nd_place_medal: [1xGold and 2xSilver Medal Winning Solution from 2019 to 2022 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient) :basketball:
+- :1st_place_medal: [Gold Medal Winning (3rd out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101) :basketball:
+- :1st_place_medal: [Gold Medal Winning (4th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407) :basketball:
+- :1st_place_medal: [Most Voted Solution from 2023 Stock Market Prediction Competition](https://www.kaggle.com/code/ravi20076/optiver-baseline-models?scriptVersionId=152991375) :chart_with_upwards_trend:
+- :2nd_place_medal: [Silver Medal Winning (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879) :basketball:
+- 15x :3rd_place_medal: [15xBronze Medal Winning (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient) :basketball:
 
 # Abstract
 
@@ -17,7 +17,7 @@ To the best of our knowledge, there are two existing methods that attempt to con
 
 Our proposed method, **G**ambling **O**dds **T**o **O**utcome probabilities **Conversion** (`goto_conversion`) reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa. Our experiments show `goto_conversion` converts gambling odds to probabilities more robustly than all three of these existing methods.
 
-This package is an implementation of `goto_conversion` as well as `efficient_shin_conversion`. The Shin conversion is originally a numerical solution but according to Kizildemir 2024 [[6](#6)], we can enhance its efficiency by reduction to an analytical solution. We have implemented the enhanced Shin conversion proposed by Kizildemir 2024 as `efficient_shin_conversion` in this package.
+This package is an implementation of `goto_conversion` as well as `efficient_shin_conversion`. The Shin conversion is originally a numerical solution but according to Kizildemir 2024 [[5](#5)], we can enhance its efficiency by reduction to an analytical solution. We have implemented the enhanced Shin conversion proposed by Kizildemir 2024 as `efficient_shin_conversion` in this package.
 
 The favourite-longshot bias is not limited to gambling markets, it exists in stock markets too. Thus, we applied the original `goto_conversion` to stock markets by defining the `zero_sum` variant. Under the same philosophy as the original `goto_conversion`, `zero_sum` adjusts all predicted stock prices (e.g. weighted average price) by the same units of standard error to ensure all predicted stock prices relative to the index price (e.g. weighted average nasdaq price) sum to zero. This attempts to consider the favourite-longshot bias by utilising the wider standard errors implied for predicted stock prices with low trade volume and vice-versa.
 
@@ -111,10 +111,13 @@ overround". American Journal of Sports Science, 2017, Volume 5, Issue 6,
 pp. 45-49.](https://doi.org/10.11648/j.ajss.20170506.12)
 
 <a id="5">[5]</a>
-[Football-Data](https://www.football-data.co.uk/)
+[Kizildemir, M., Akin, E., & Alkan, A. (2024). A Family of Solutions Related to Shin’s Model For Probability Forecasts. Cambridge Open Engage](https://doi.org/10.33774/coe-2024-dwb6t)
 
 <a id="6">[6]</a>
-[Kizildemir, M., Akin, E., & Alkan, A. (2024). A Family of Solutions Related to Shin’s Model For Probability Forecasts. Cambridge Open Engage](https://doi.org/10.33774/coe-2024-dwb6t)
+[goto_conversion's Kaggle Profile](https://www.kaggle.com/kaito510)
+
+<a id="7">[6]</a>
+[Kaggle Main Page](https://www.kaggle.com)
 
 # Contact Me
 
