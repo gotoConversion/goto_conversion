@@ -15,6 +15,9 @@ Outside of Kaggle, `goto_conversion` has achieved:
 
 # Ease of Use
 
+To use `goto_conversion`, it does not require advanced domain knowledge, nor expensive computational resources.
+Linked below is an example of how to use `goto_conversion` in the freely available, Google Colab.
+
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Xdo-4uZu0XFdbFuqZbV0gKUGs4L2rCAt?usp=sharing)
 
 # Abstract
