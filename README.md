@@ -10,7 +10,7 @@
 - 15x :3rd_place_medal: [15xBronze Medal Winning (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient) :basketball:
 
 Outside of Kaggle, `goto_conversion` has achieved:
-- :moneybag: [10%+ Profit for each Prediction on Pyckio](https://pyckio.com/i/#!account/gotoconversion) :tennis:
+- :moneybag: [10%+ Profit per Prediction on Pyckio](https://pyckio.com/i/#!account/gotoconversion) :tennis:
 - :microphone: [Presentation at the Royal Statistical Society](https://youtu.be/M00osEjcp_4?si=_WZv09311q3UoS9t&t=411) :book:
 
 # Ease of Use
