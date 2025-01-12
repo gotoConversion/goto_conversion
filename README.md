@@ -15,7 +15,7 @@ Outside of Kaggle, `goto_conversion` has achieved:
 
 # Ease of Use
 
-- Starter Notebook in Google Colab: https://colab.research.google.com/drive/1Xdo-4uZu0XFdbFuqZbV0gKUGs4L2rCAt?usp=sharing
+- Starter Notebook: [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Xdo-4uZu0XFdbFuqZbV0gKUGs4L2rCAt?usp=sharing)
 
 # Abstract
 
