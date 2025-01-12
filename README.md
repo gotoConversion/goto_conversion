@@ -9,6 +9,10 @@
 - :2nd_place_medal: [Silver Medal Winning (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879) :basketball:
 - 15x :3rd_place_medal: [15xBronze Medal Winning (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient) :basketball:
 
+Outside of Kaggle, `goto_conversion` has achieved:
+- :moneybag: [10%+ Profit per Pick on Pyckio (on Average)](https://pyckio.com/i/#!account/gotoconversion) :tennis:
+- :microphone: [Presentation at the Royal Statistical Society](https://youtu.be/M00osEjcp_4?si=_WZv09311q3UoS9t&t=411) :book:
+
 # Ease of Use
 
 - Starter Notebook in Google Colab: https://colab.research.google.com/drive/1Xdo-4uZu0XFdbFuqZbV0gKUGs4L2rCAt?usp=sharing
@@ -24,10 +28,6 @@ Our proposed method, **G**ambling **O**dds **T**o **O**utcome probabilities **Co
 This package is an implementation of `goto_conversion` as well as `efficient_shin_conversion`. The Shin conversion is originally a numerical solution but according to Kizildemir 2024 [[5](#5)], we can enhance its efficiency by reduction to an analytical solution. We have implemented the enhanced Shin conversion proposed by Kizildemir 2024 as `efficient_shin_conversion` in this package.
 
 The favourite-longshot bias is not limited to gambling markets, it exists in stock markets too. Thus, we applied the original `goto_conversion` to stock markets by defining the `zero_sum` variant. Under the same philosophy as the original `goto_conversion`, `zero_sum` adjusts all predicted stock prices (e.g. weighted average price) by the same units of standard error to ensure all predicted stock prices relative to the index price (e.g. weighted average nasdaq price) sum to zero. This attempts to consider the favourite-longshot bias by utilising the wider standard errors implied for predicted stock prices with low trade volume and vice-versa.
-
-# Presentation at the Royal Statistical Society
-
-- Link to Presentation Recording: https://youtu.be/M00osEjcp_4?si=_WZv09311q3UoS9t&t=411
 
 # Installation
 
