@@ -12,7 +12,7 @@
 Outside of Kaggle, `goto_conversion` has achieved:
 - :dart: [~90% Accuracy (Hit Rate) for Tennis Predictions](https://pyckio.com/i/#!account/gotoconversion/tennis) :tennis:
 - :bar_chart: [Outperforms Tennis Prediction Markets with +10% Yield](https://pyckio.com/i/#!account/gotoconversion/tennis) :tennis:
-- :bar_chart: [Outperforms Football Prediction Markets with +10% Yield](https://pyckio.com/i/#!account/gotoconversion/soccer) :soccer:
+- :bar_chart: [Outperforms Football Prediction Markets with a Positive Yield](https://pyckio.com/i/#!account/gotoconversion/soccer) :soccer:
 - :microphone: [Presentation at the Royal Statistical Society](https://youtu.be/M00osEjcp_4?si=_WZv09311q3UoS9t&t=411) :book:
 
 # Ease of Use
