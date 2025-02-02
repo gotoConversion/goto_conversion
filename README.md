@@ -8,11 +8,6 @@
 - :1st_place_medal: [Most Voted Solution from 2023 Stock Market Prediction Competition](https://www.kaggle.com/code/ravi20076/optiver-baseline-models?scriptVersionId=152991375) :chart_with_upwards_trend:
 - :2nd_place_medal: [Silver Medal Winning (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879) :basketball:
 - 15x :3rd_place_medal: [15xBronze Medal Winning (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient) :basketball:
-
-Outside of Kaggle, `goto_conversion` has achieved:
-- :dart: [~90% Accuracy (Hit Rate) for Tennis Predictions](https://pyckio.com/i/#!account/gotoconversion/tennis) :tennis:
-- :bar_chart: [Outperforms Tennis Prediction Markets with +10% Yield](https://pyckio.com/i/#!account/gotoconversion/tennis) :tennis:
-- :bar_chart: [Outperforms Football Prediction Markets with a Positive Yield](https://pyckio.com/i/#!account/gotoconversion/soccer) :soccer:
 - :microphone: [Presentation at the Royal Statistical Society](https://youtu.be/M00osEjcp_4?si=_WZv09311q3UoS9t&t=411) :book:
 
 # Ease of Use
