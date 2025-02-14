@@ -1,13 +1,13 @@
 # `goto_conversion` - Used by 4+ Gold Medal Solutions on Kaggle
 
 `goto_conversion` has been a leverage for at least four :1st_place_medal: gold-medal-winning solutions on Kaggle [[6](#6),[7](#7)] and many other medal-winning solutions. They include:
-- :1st_place_medal: [Gold Medal Winning (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653) :chart_with_upwards_trend:
-- :1st_place_medal::2nd_place_medal::2nd_place_medal: [1xGold and 2xSilver Medal Winning Solution from 2019 to 2022 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient) :basketball:
-- :1st_place_medal: [Gold Medal Winning (3rd out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101) :basketball:
-- :1st_place_medal: [Gold Medal Winning (4th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407) :basketball:
+- :1st_place_medal: [Gold Medal (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653) :chart_with_upwards_trend:
+- :1st_place_medal::2nd_place_medal::2nd_place_medal: [1xGold and 2xSilver Medal Solution from 2019 to 2022 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient) :basketball:
+- :1st_place_medal: [Gold Medal (3rd out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101) :basketball:
+- :1st_place_medal: [Gold Medal (4th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407) :basketball:
 - :1st_place_medal: [Most Voted Solution from 2023 Stock Market Prediction Competition](https://www.kaggle.com/code/ravi20076/optiver-baseline-models?scriptVersionId=152991375) :chart_with_upwards_trend:
-- :2nd_place_medal: [Silver Medal Winning (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879) :basketball:
-- 15x :3rd_place_medal: [15xBronze Medal Winning (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient) :basketball:
+- :2nd_place_medal: [Silver Medal (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879) :basketball:
+- 15x :3rd_place_medal: [15xBronze Medal (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient) :basketball:
 - :microphone: [Presentation at the Royal Statistical Society](https://youtu.be/M00osEjcp_4?si=_WZv09311q3UoS9t&t=411) :book:
 
 # Ease of Use
