@@ -13,7 +13,7 @@
 # Ease of Use
 
 To use `goto_conversion`, it does not require historical data for model fit, advanced domain knowledge, nor paid computational resources.
-Linked below is an example of how to use `goto_conversion` in the freely available, Google Colab.
+Linked below provides 4 examples of how to use `goto_conversion` in the freely available, Google Colab.
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Xdo-4uZu0XFdbFuqZbV0gKUGs4L2rCAt?usp=sharing)
 
@@ -28,67 +28,6 @@ Our proposed method, **G**ambling **O**dds **T**o **O**utcome probabilities **Co
 This package is an implementation of `goto_conversion` as well as `efficient_shin_conversion`. The Shin conversion is originally a numerical solution but according to Kizildemir 2024 [[5](#5)], we can enhance its efficiency by reduction to an analytical solution. We have implemented the enhanced Shin conversion proposed by Kizildemir 2024 as `efficient_shin_conversion` in this package.
 
 The favourite-longshot bias is not limited to gambling markets, it exists in stock markets too. Thus, we applied the original `goto_conversion` to stock markets by defining the `zero_sum` variant. Under the same philosophy as the original `goto_conversion`, `zero_sum` adjusts all predicted stock prices (e.g. weighted average price) by the same units of standard error to ensure all predicted stock prices relative to the index price (e.g. weighted average nasdaq price) sum to zero. This attempts to consider the favourite-longshot bias by utilising the wider standard errors implied for predicted stock prices with low trade volume and vice-versa.
-
-# Installation
-
-Requires Python 3.7 or above.
-
-```
-pip install goto-conversion
-```
-
-# Usage
-
-## Decimal Odds
-
-```python
-import goto_conversion
-goto_conversion.goto_conversion([1.2, 3.4, 5.6])
-```
-
-```
-[0.7753528189788175, 0.17479473292721065, 0.04985244809397199]
-```
-
-## American Odds
-
-```python
-import goto_conversion
-goto_conversion.goto_conversion([-500, 240, 460], isAmericanOdds = True)
-```
-
-```
-[0.7753528189788175, 0.17479473292721065, 0.04985244809397199]
-```
-
-## Numpy array inputs will return numpy array outputs
-
-```python
-import goto_conversion
-import numpy as np
-goto_conversion.goto_conversion(np.array([1.2, 3.4, 5.6]))
-```
-
-```
-[0.77535282 0.17479473 0.04985245]
-```
-
-## Test cases for `efficient_shin_conversion`
-
-```python
-import goto_conversion
-print(goto_conversion.efficient_shin_conversion([1.22,4.57,6.54]))
-print(goto_conversion.efficient_shin_conversion([1.22,4.63,6.38]))
-print(goto_conversion.efficient_shin_conversion([1.17,4.97,7.57]))
-```
-
-```
-[0.8005889182988829, 0.13614976602243348, 0.0632613156786835]
-[0.8004787158953608, 0.1325348922189233, 0.0669863918857159]
-[0.8396249156189404, 0.11832615760257503, 0.04204892677848464]
-```
-
-Notice the printed probability lists match the first three rows of table 1 in Kizildemir 2024 [[5](#5)].
 
 # Pseudo Code
 
