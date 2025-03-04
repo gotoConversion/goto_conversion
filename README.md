@@ -1,6 +1,6 @@
 # `goto_conversion` - Used by 4+ Gold Medal Solutions on Kaggle
 
-`goto_conversion` has been a leverage for at least four :1st_place_medal: gold-medal-winning solutions on Kaggle [[6](#6),[7](#7)] and many other medal-winning solutions. They include:
+`goto_conversion` has been leveraged by at least four :1st_place_medal: gold-medal-winning solutions on Kaggle [[6](#6),[7](#7)] and many other medal-winning solutions. They include:
 - :1st_place_medal: [Gold Medal (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653) :chart_with_upwards_trend:
 - :1st_place_medal::2nd_place_medal::2nd_place_medal: [1xGold and 2xSilver Medal Solution from 2019 to 2022 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/1xgold-2xsilvers-key-ingredient) :basketball:
 - :1st_place_medal: [Gold Medal (3rd out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101) :basketball:
