@@ -13,7 +13,7 @@
 # Ease of Use
 
 To use `goto_conversion`, it does not require historical data for model fit, advanced domain knowledge, nor paid computational resources.
-Linked below provides 4 examples of how to use `goto_conversion` in the freely available, Google Colab.
+Linked below provides five examples of how to use `goto_conversion` in the freely available, Google Colab.
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Xdo-4uZu0XFdbFuqZbV0gKUGs4L2rCAt?usp=sharing)
 
