@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "goto_conversion"
-version = "2.0.4"
+version = "2.1.0"
 authors = [{ name = 'Kaito Goto' },]
-description = "Gambling Odds To Outcome probabilities Conversion (goto_conversion)"
+description = "Produced 10+ Gold Medals and 100+ Medals on Kaggle"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
