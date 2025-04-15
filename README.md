@@ -8,7 +8,7 @@
 - :1st_place_medal: [Gold Medal (6th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572482) :basketball:
 - :1st_place_medal: [Gold Medal (7th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572540) :basketball:
 - :1st_place_medal: [Gold Medal (8th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572535) :basketball:
-- 3x :1st_place_medal: [3xGold Medal Solutions from 2025 Basketball Outcome Prediction Competition (10th to 12th out of 1727) almost certainly used goto_conversion](https://www.kaggle.com/code/kaito510/who-used-goto-conversion) :basketball:
+- 3x :1st_place_medal: [3xGold Medal (10th to 12th out of 1727) Solutions from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/who-used-goto-conversion) :basketball:
 - :1st_place_medal: [Gold Medal (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653) :chart_with_upwards_trend:
 - :1st_place_medal: [Gold Medal (3rd out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101) :basketball:
 - :1st_place_medal: [Gold Medal (4th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407) :basketball:
