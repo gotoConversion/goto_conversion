@@ -1,6 +1,6 @@
 # `goto_conversion` - Produced 10+ Gold Medals and 100+ Medals on Kaggle
 
-`goto_conversion` has produced 10+ :1st_place_medal: gold-medal-winning solutions on Kaggle [[6](#6),[7](#7)] and 100+ :2nd_place_medal: :3rd_place_medal: medal-winning solutions. They include:
+`goto_conversion` has helped produce 10+ :1st_place_medal: gold-medal-winning solutions on Kaggle [[6](#6),[7](#7)] and 100+ :2nd_place_medal: :3rd_place_medal: medal-winning solutions. They include:
 - 1x :1st_place_medal: 2x :2nd_place_medal: 2x :3rd_place_medal: [5x Medals including 1x Gold (all solo) the Founder of `goto_conversion` won from 2019 to 2025 Basketball Outcome Prediction Competitions](https://www.kaggle.com/kaito510) :basketball:
 - :1st_place_medal: [Gold Medal (2nd out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572528) :basketball:
 - :1st_place_medal: [Gold Medal (3rd out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572553) :basketball:
