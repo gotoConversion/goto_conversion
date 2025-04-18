@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "goto_conversion"
-version = "2.1.1"
+version = "2.1.2"
 authors = [{ name = 'Kaito Goto' },]
 description = "Produced 10+ Gold Medals and 100+ Medals on Kaggle"
 readme = "README.md"
