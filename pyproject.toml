@@ -18,3 +18,9 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/gotoConversion/goto_conversion"
 "Bug Tracker" = "https://github.com/gotoConversion/goto_conversion/issues"
+
+[tool.setuptools]
+packages = ["goto_conversion"]
+
+[tool.setuptools.package-data]
+"goto_conversion" = ["data/*.csv"]
