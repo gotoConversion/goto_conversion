@@ -9,9 +9,10 @@ authors = [{ name = 'Kaito Goto' },]
 description = "Powered over 10 Gold Medals and 100 Medals on Kaggle"
 readme = "README.md"
 requires-python = ">=3.7"
+license = "MIT"
+keywords = ["kaggle", "betting", "bookmaker", "sports-analytics", "betfair-api"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 
