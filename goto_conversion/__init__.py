@@ -1,5 +1,6 @@
 def convertAmericanOdds(listOfOdds):
     try: #using numpy
+        import numpy as np
         listOfOdds = listOfOdds.astype(float)
         isNegativeAmericanOdds = listOfOdds < 0.0
         listOfOdds[isNegativeAmericanOdds] = 1.0 + ((100.0 / listOfOdds[isNegativeAmericanOdds]) * -1.0)
@@ -19,6 +20,7 @@ def errorCatchers(listOfOdds):
     if len(listOfOdds) < 2:
         raise ValueError('len(listOfOdds) must be >= 2')
     try:
+        import numpy as np
         isAllOddsAbove1 = np.all(listOfOdds > 1.0)
     except:
         isAllOddsAbove1 = all([x > 1.0 for x in listOfOdds])
@@ -35,6 +37,7 @@ def efficient_shin_conversion(listOfOdds, total = 1.0, multiplicativeIfUnprudent
     errorCatchers(listOfOdds)
 
     try: #using numpy
+        import numpy as np
         #Compute parameters
         listOfPies = 1.0 / listOfOdds
         beta = np.sum(listOfPies)
@@ -70,6 +73,7 @@ def goto_conversion(listOfOdds, total = 1.0, multiplicativeIfUnprudentOdds = Fal
     errorCatchers(listOfOdds)
 
     try: #using numpy
+        import numpy as np
         listOfProbabilities = 1.0 / listOfOdds
         listOfSe = np.sqrt((listOfProbabilities - listOfProbabilities**2.0) / listOfProbabilities)
         step = (np.sum(listOfProbabilities) - total) / np.sum(listOfSe)
