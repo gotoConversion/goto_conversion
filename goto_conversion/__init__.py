@@ -27,7 +27,7 @@ def errorCatchers(listOfOdds):
     if not isAllOddsAbove1:
         raise ValueError('All odds must be > 1.0, set isAmericanOdds parameter to True if using American Odds')
 
-def efficient_shin_conversion(listOfOdds, total = 1.0, multiplicativeIfUnprudentOdds = False, isAmericanOdds = False):
+def efficient_shin_conversion(listOfOdds, total = 1.0, multiplicativeIfImprudentOdds = False, isAmericanOdds = False):
 
     #Convert American Odds to Decimal Odds
     if isAmericanOdds:
@@ -63,7 +63,7 @@ def efficient_shin_conversion(listOfOdds, total = 1.0, multiplicativeIfUnprudent
 
     return outputListOfProbabilities
 
-def goto_conversion(listOfOdds, total = 1.0, multiplicativeIfUnprudentOdds = False, isAmericanOdds = False):
+def goto_conversion(listOfOdds, total = 1.0, multiplicativeIfImprudentOdds = False, isAmericanOdds = False):
 
     #Convert American Odds to Decimal Odds
     if isAmericanOdds:
@@ -79,12 +79,12 @@ def goto_conversion(listOfOdds, total = 1.0, multiplicativeIfUnprudentOdds = Fal
         step = (np.sum(listOfProbabilities) - total) / np.sum(listOfSe)
         outputListOfProbabilities = listOfProbabilities - (listOfSe * step)
         if np.any(outputListOfProbabilities <= 0.0) or (np.sum(listOfProbabilities) <= 1.0):
-            if multiplicativeIfUnprudentOdds:
+            if multiplicativeIfImprudentOdds:
                 normalizer = np.sum(listOfProbabilities) / total
                 outputListOfProbabilities = np.array(listOfProbabilities) / normalizer
             else:
                 print('Odds must have a positive low bookmaker margin to be prudent.')
-                raise ValueError('Set multiplicativeIfUnprudentOdds argument to True to use multiplicative conversion for unprudent odds.')
+                raise ValueError('Set multiplicativeIfImprudentOdds argument to True to use multiplicative conversion for Imprudent odds.')
 
     except: #using base python
         listOfProbabilities = [1.0/x for x in listOfOdds] #initialize probabilities using inverse odds
@@ -92,12 +92,12 @@ def goto_conversion(listOfOdds, total = 1.0, multiplicativeIfUnprudentOdds = Fal
         step = (sum(listOfProbabilities) - total)/sum(listOfSe) #compute how many steps of SE the probabilities should step back by
         outputListOfProbabilities = [x - (y*step) for x,y in zip(listOfProbabilities, listOfSe)]
         if any(0.0 >= x for x in outputListOfProbabilities) or (sum(listOfProbabilities) <= 1.0):
-            if multiplicativeIfUnprudentOdds:
+            if multiplicativeIfImprudentOdds:
                 normalizer = sum(listOfProbabilities)/total
                 outputListOfProbabilities = [x/normalizer for x in listOfProbabilities]
             else:
                 print('Odds must have a positive low bookmaker margin to be prudent.')
-                raise ValueError('Set multiplicativeIfUnprudentOdds argument to True to use multiplicative conversion for unprudent odds.')
+                raise ValueError('Set multiplicativeIfImprudentOdds argument to True to use multiplicative conversion for Imprudent odds.')
 
     return outputListOfProbabilities
 
