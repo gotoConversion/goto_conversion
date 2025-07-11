@@ -16,7 +16,6 @@
 - 75x :2nd_place_medal: [75xSilver Medal (14th to 83th place out of 1727) Solution from 2025 Basketball Outcome Prediction Competition (`Akshar Patidar` and `Best overfitting` was a team of 2 and 5 respectively)](https://www.kaggle.com/code/kaito510/updated-goto-conversion-winning-solution) :basketball:
 - :2nd_place_medal: [Silver Medal (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879) :basketball:
 - 19x :3rd_place_medal: [19xBronze Medal (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition (`CV_conda` was a team of 5)](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient) :basketball:
-- :microphone: [Presentation at the Royal Statistical Society](https://youtu.be/M00osEjcp_4?si=_WZv09311q3UoS9t&t=411) :book:
 - :white_check_mark: [Approved by PySport](https://opensource.pysport.org/project/goto_conversion) :trophy:
 
 # Ease of Use
@@ -34,13 +33,9 @@ To the best of our knowledge, there are two existing methods that attempt to con
 
 Our proposed method `goto_conversion` reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa. Our experiments show `goto_conversion` converts betting odds to probabilities more robustly than all three of these existing methods.
 
-This package is an implementation of `goto_conversion` as well as `efficient_shin_conversion`. The Shin conversion is originally a numerical solution but according to Kizildemir 2024 [[5](#5)], we can enhance its efficiency by reduction to an analytical solution. We have implemented the enhanced Shin conversion proposed by Kizildemir 2024 as `efficient_shin_conversion` in this package.
+This package primarily implements `goto_conversion`, but also includes other functions, such as `efficient_shin_conversion`. The Shin conversion is originally a numerical solution but according to [[5](#5)], we can enhance its efficiency by reduction to an analytical solution. We have implemented the enhanced Shin conversion proposed by [[5](#5)] as `efficient_shin_conversion` in this package.
 
 The favourite-longshot bias is not limited to betting markets, it exists in stock markets too. Thus, we applied the original `goto_conversion` to stock markets by defining the `zero_sum` variant. Under the same philosophy as the original `goto_conversion`, `zero_sum` adjusts all predicted stock prices (e.g. weighted average price) by the same units of standard error to ensure all predicted stock prices relative to the index price (e.g. weighted average nasdaq price) sum to zero. This attempts to consider the favourite-longshot bias by utilising the wider standard errors implied for predicted stock prices with low trade volume and vice-versa.
-
-# Pseudo Code
-
-![alt text](https://github.com/gotoConversion/goto_conversion/blob/main/PseudoCode.png?raw=true)
 
 # References
 
@@ -63,7 +58,7 @@ overround". American Journal of Sports Science, 2017, Volume 5, Issue 6,
 pp. 45-49.](https://doi.org/10.11648/j.ajss.20170506.12)
 
 <a id="5">[5]</a>
-[Kizildemir, M., Akin, E., & Alkan, A. (2024). A Family of Solutions Related to Shin’s Model For Probability Forecasts. Cambridge Open Engage](https://doi.org/10.33774/coe-2024-dwb6t)
+[Kizildemir, Melis, Akin, Ertugrul and Alkan, Altug. "A family of solutions related to Shin’s model for probability forecasts" Journal of Quantitative Analysis in Sports, vol. 21, no. 2, 2025, pp. 153-158.](https://doi.org/10.1515/jqas-2024-0064)
 
 <a id="6">[6]</a>
 [goto_conversion's Kaggle Profile](https://www.kaggle.com/kaito510)
