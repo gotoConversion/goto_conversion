@@ -26,7 +26,7 @@ Linked below provides five examples of how to use `goto_conversion` in the freel
 
 # Abstract
 
-Our proposed method `goto_conversion` reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa. Our experiments show `goto_conversion` converts betting odds to probabilities more robustly than all three of these existing methods.
+Our proposed method `goto_conversion` reduces all inverse odds by the same units of standard error. This attempts to consider the favourite-longshot bias by utilising the proportionately wider standard errors implied for inverses of longshot odds and vice-versa.
 
 This package primarily implements `goto_conversion`, but also includes other functions, such as `efficient_shin_conversion`. The Shin conversion [[2](#2)] is originally a numerical solution but according to [[3](#3)], we can enhance its efficiency by reduction to an analytical solution. We have implemented the enhanced Shin conversion proposed by [[3](#3)] as `efficient_shin_conversion` in this package.
 
