@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "goto_conversion"
 version = "2.2.1"
 authors = [{ name = 'Kaito Goto' },]
-description = "Powered over 10 Gold Medals and 100 Medals on Kaggle"
+description = "Powered $47,000 of prize money, over 10 Gold Medals and 100 Medals on Kaggle"
 readme = "README.md"
 requires-python = ">=3.7"
 license = "MIT"
