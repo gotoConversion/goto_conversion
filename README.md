@@ -1,20 +1,20 @@
-# `goto_conversion` - Powered over 10 Gold Medals and 100 Medals on Kaggle
+# `goto_conversion` - Powered $47,000 of prize money, over 10 Gold Medals and 100 Medals on Kaggle
 
 `goto_conversion` has powered over 10 :1st_place_medal: gold-medal-winning solutions and 100 :2nd_place_medal: :3rd_place_medal: medal-winning solutions on Kaggle [[1](#1)]. They include:
 - 1x :1st_place_medal: 2x :2nd_place_medal: 2x :3rd_place_medal: [5x Medals including 1x Gold (all solo) the Founder of `goto_conversion` won from 2019 to 2025 Basketball Outcome Prediction Competitions](https://www.kaggle.com/kaito510) :basketball:
-- :1st_place_medal: [Gold Medal (2nd out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572528) :basketball:
-- :1st_place_medal: [Gold Medal (3rd out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572553) :basketball:
-- :1st_place_medal: [Gold Medal (5th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition (referred to as `kaito510` solution)](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572909) :basketball:
-- :1st_place_medal: [Gold Medal (6th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572482) :basketball:
-- :1st_place_medal: [Gold Medal (7th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572540) :basketball:
-- :1st_place_medal: [Gold Medal (8th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572535) :basketball:
-- 3x :1st_place_medal: [3xGold Medal (10th to 12th out of 1727) Solutions from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/who-used-goto-conversion) :basketball:
-- :1st_place_medal: [Gold Medal (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653) :chart_with_upwards_trend:
-- :1st_place_medal: [Gold Medal (3rd out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101) :basketball:
-- :1st_place_medal: [Gold Medal (4th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407) :basketball:
 - 75x :2nd_place_medal: [75xSilver Medal (14th to 83th place out of 1727) Solution from 2025 Basketball Outcome Prediction Competition (`Akshar Patidar` and `Best overfitting` was a team of 2 and 5 respectively)](https://www.kaggle.com/code/kaito510/updated-goto-conversion-winning-solution) :basketball:
-- :2nd_place_medal: [Silver Medal (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879) :basketball:
 - 19x :3rd_place_medal: [19xBronze Medal (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition (`CV_conda` was a team of 5)](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient) :basketball:
+- :moneybag: $8,000 Winner :1st_place_medal: [Gold Medal (2nd out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572528) :basketball:
+- :moneybag: $7,000 Winner :1st_place_medal: [Gold Medal (3rd out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572553) :basketball:
+- :moneybag: $5,000 Winner :1st_place_medal: [Gold Medal (5th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition (referred to as `kaito510` solution)](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572909) :basketball:
+- :moneybag: $5,000 Winner :1st_place_medal: [Gold Medal (6th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572482) :basketball:
+- :moneybag: $5,000 Winner :1st_place_medal: [Gold Medal (7th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572540) :basketball:
+- :moneybag: $5,000 Winner :1st_place_medal: [Gold Medal (8th out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2025/discussion/572535) :basketball:
+- :moneybag: $7,000 Winner :1st_place_medal: [Gold Medal (3rd out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/495101) :basketball:
+- :moneybag: $5,000 Winner :1st_place_medal: [Gold Medal (4th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/494407) :basketball:
+- :1st_place_medal: [Gold Medal (14th out of 3225) Solution from 2023 Stock Market Prediction Competition (the `zero_sum` variant)](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/462653) :chart_with_upwards_trend:
+- 3x :1st_place_medal: [3xGold Medal (10th to 12th out of 1727) Solutions from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/who-used-goto-conversion) :basketball:
+- :2nd_place_medal: [Silver Medal (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879) :basketball:
 - :white_check_mark: [Approved by PySport](https://opensource.pysport.org/project/goto_conversion) :trophy:
 
 # Ease of Use
