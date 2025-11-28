@@ -1,5 +1,11 @@
 # `goto_conversion` - Powered $47,000 of prize money, over 10 Gold Medals and 100 Medals on Kaggle
 
+**LATEST UPDATES ARE ON MY SUBSTACK:**
+
+[![Substack](https://img.shields.io/badge/Substack-%23006f5c.svg?style=for-the-badge&logo=substack&logoColor=FF6719)](https://gotoconversion.substack.com/)
+
+# Wins
+
 `goto_conversion` has powered over 10 :1st_place_medal: gold-medal-winning solutions and 100 :2nd_place_medal: :3rd_place_medal: medal-winning solutions on Kaggle [[1](#1)]. They include:
 - 1x :1st_place_medal: 2x :2nd_place_medal: 2x :3rd_place_medal: [5x Medals including 1x Gold (all solo) the Founder of `goto_conversion` won from 2019 to 2025 Basketball Outcome Prediction Competitions](https://www.kaggle.com/kaito510) :basketball:
 - 75x :2nd_place_medal: [75xSilver Medal (14th to 83th place out of 1727) Solution from 2025 Basketball Outcome Prediction Competition (`Akshar Patidar` and `Best overfitting` was a team of 2 and 5 respectively)](https://www.kaggle.com/code/kaito510/updated-goto-conversion-winning-solution) :basketball:
