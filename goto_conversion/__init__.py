@@ -107,13 +107,6 @@ def zero_sum(listOfPrices, listOfVolumes):
     outputListOfPrices = [x - (y*step) for x,y in zip(listOfPrices, listOfSe)]
     return outputListOfPrices
 
-import torch
-import torch.nn as nn
-from torchvision import models
-import torchvision.transforms as transforms
-from PIL import Image
-import os
-
 def pgd_attack(model, images, labels, eps, alpha, steps):
     """
     Projected Gradient Descent (PGD) - The "FakeIt" approach.
@@ -145,6 +138,14 @@ def pgd_attack(model, images, labels, eps, alpha, steps):
     return adv_images
 
 def image_conversion(image_path, output_filename, eps=0.03, alpha=0.01, steps=40):
+    # 0. Import Libraries
+    import torch
+    import torch.nn as nn
+    from torchvision import models
+    import torchvision.transforms as transforms
+    from PIL import Image
+    import os
+    
     # 1. Setup Model
     detector = models.resnet50(pretrained=True)
     detector.eval()
