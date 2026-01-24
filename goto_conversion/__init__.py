@@ -111,6 +111,13 @@ def pgd_attack(model, images, labels, eps, alpha, steps):
     """
     Projected Gradient Descent (PGD) - The "FakeIt" approach.
     """
+    import torch
+    import torch.nn as nn
+    from torchvision import models
+    import torchvision.transforms as transforms
+    from PIL import Image
+    import os
+    
     adv_images = images.clone().detach()
 
     # Random initialization within the epsilon ball
