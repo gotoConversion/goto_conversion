@@ -106,3 +106,82 @@ def zero_sum(listOfPrices, listOfVolumes):
     step = sum(listOfPrices)/sum(listOfSe)
     outputListOfPrices = [x - (y*step) for x,y in zip(listOfPrices, listOfSe)]
     return outputListOfPrices
+
+import torch
+import torch.nn as nn
+from torchvision import models
+import torchvision.transforms as transforms
+from PIL import Image
+import os
+
+def pgd_attack(model, images, labels, eps, alpha, steps):
+    """
+    Projected Gradient Descent (PGD) - The "FakeIt" approach.
+    """
+    adv_images = images.clone().detach()
+
+    # Random initialization within the epsilon ball
+    adv_images = adv_images + torch.empty_like(adv_images).uniform_(-eps, eps)
+    adv_images = torch.clamp(adv_images, 0, 1)
+
+    loss_fn = nn.CrossEntropyLoss()
+
+    for i in range(steps):
+        adv_images.requires_grad = True
+        outputs = model(adv_images)
+
+        # Maximize loss for the "Fake" label (move away from being detected as fake)
+        loss = loss_fn(outputs, labels)
+
+        model.zero_grad()
+        loss.backward()
+
+        adv_images = adv_images.detach() + alpha * adv_images.grad.sign()
+
+        # Projection
+        eta = torch.clamp(adv_images - images, min=-eps, max=eps)
+        adv_images = torch.clamp(images + eta, min=0, max=1)
+
+    return adv_images
+
+def image_conversion(image_path, output_filename, eps=0.03, alpha=0.01, steps=40):
+    # 1. Setup Model
+    detector = models.resnet50(pretrained=True)
+    detector.eval()
+
+    # 2. Check Input
+    #image_path = "fake.png"
+    if not os.path.exists(image_path):
+        # Create a dummy image if one doesn't exist for testing purposes
+        print(f"'{image_path}' not found. Creating a dummy test image...")
+        dummy = Image.new('RGB', (400, 300), color = 'red')
+        dummy.save(image_path)
+
+    # 3. Prepare Transform
+    # MODIFIED: Removed transforms.Resize((224, 224)) to preserve aspect ratio.
+    # The model will now process the image at its original resolution.
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+    ])
+
+    input_image = Image.open(image_path).convert("RGB")
+    input_tensor = transform(input_image).unsqueeze(0)
+
+    print(f"Processing image with size: {input_image.size}")
+
+    # Define True Label (1 = Fake)
+    true_label = torch.tensor([1])
+
+    print(f"Running PGD Attack on {image_path}...")
+    adv_example = pgd_attack(detector, input_tensor, true_label, eps, alpha, steps)
+
+    # Check results
+    old_pred = detector(input_tensor).argmax(1).item()
+    new_pred = detector(adv_example).argmax(1).item()
+
+    print(f"Prediction changed from {old_pred} to {new_pred}")
+
+    # Save Output
+    #output_filename = "adv_pgd_output.png"
+    transforms.ToPILImage()(adv_example.squeeze(0)).save(output_filename)
+    print(f"Saved adversarial image to '{output_filename}' with original aspect ratio.")
