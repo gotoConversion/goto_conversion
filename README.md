@@ -50,3 +50,7 @@ pp. 934-943.](https://doi.org/10.1016/j.ijforecast.2014.02.008)
 
 <a id="3">[3]</a>
 [Kizildemir, Melis, Akin, Ertugrul and Alkan, Altug. "A family of solutions related to Shin’s model for probability forecasts" Journal of Quantitative Analysis in Sports, vol. 21, no. 2, 2025, pp. 153-158.](https://doi.org/10.1515/jqas-2024-0064)
+
+# Contact Me
+
+via LinkedIn: https://www.linkedin.com/in/goto/
