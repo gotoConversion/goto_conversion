@@ -6,7 +6,7 @@
 
 # Wins
 
-`goto_conversion` has powered over 10 :1st_place_medal: gold-medal-winning solutions and 100 :2nd_place_medal: :3rd_place_medal: medal-winning solutions on Kaggle [[1](#1)]. They include:
+`goto_conversion` has powered 10+ :1st_place_medal: gold-medal-winning solutions and 100+ :2nd_place_medal: :3rd_place_medal: medal-winning solutions on Kaggle [[1](#1)]. They include:
 - 1x :1st_place_medal: 2x :2nd_place_medal: 2x :3rd_place_medal: [5x Medals including 1x Gold (all solo) the Founder of `goto_conversion` won from 2019 to 2025 Basketball Outcome Prediction Competitions](https://www.kaggle.com/kaito510) :basketball:
 - 75x :2nd_place_medal: [75xSilver Medal (14th to 83th place out of 1727) Solution from 2025 Basketball Outcome Prediction Competition (`Akshar Patidar` and `Best overfitting` was a team of 2 and 5 respectively)](https://www.kaggle.com/code/kaito510/updated-goto-conversion-winning-solution) :basketball:
 - 19x :3rd_place_medal: [19xBronze Medal (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition (`CV_conda` was a team of 5)](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient) :basketball:
