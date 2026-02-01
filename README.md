@@ -1,4 +1,4 @@
-# `goto_conversion` - Powered $47,000 of prize money, over 10 Gold Medals and 100 Medals on Kaggle
+# `goto_conversion` - Powered $47,000 of prize money, 10+ Gold Medals and 100+ Medals on Kaggle
 
 **LATEST UPDATES ARE ON MY SUBSTACK:**
 
