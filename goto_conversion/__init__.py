@@ -193,3 +193,167 @@ def image_conversion(image_path, output_filename, eps=0.03, alpha=0.01, steps=40
     #output_filename = "adv_pgd_output.png"
     transforms.ToPILImage()(adv_example.squeeze(0)).save(output_filename)
     print(f"Saved adversarial image to '{output_filename}' with original aspect ratio.")
+
+class AdversarialParaphraser:
+    def __init__(self,
+                 detector_name="Hello-SimpleAI/chatgpt-detector-roberta",
+                 paraphraser_name="Vamsi/T5_Paraphrase_Paws"):
+
+        import torch
+        import nltk
+        from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModelForSeq2SeqLM
+        import logging
+        
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        # --- Load Detector (Judge) ---
+        print(f"Loading Detector: {detector_name}...")
+        self.d_tokenizer = AutoTokenizer.from_pretrained(detector_name)
+        self.d_model = AutoModelForSequenceClassification.from_pretrained(detector_name)
+        self.d_model.to(self.device)
+        self.d_model.eval()
+
+        # --- Load Paraphraser (Generator) ---
+        print(f"Loading Paraphraser: {paraphraser_name}...")
+        self.p_tokenizer = AutoTokenizer.from_pretrained(paraphraser_name)
+        self.p_model = AutoModelForSeq2SeqLM.from_pretrained(paraphraser_name)
+        self.p_model.to(self.device)
+        self.p_model.eval()
+
+    def get_probability(self, text, target_label_idx=0):
+        import torch
+        import nltk
+        from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModelForSeq2SeqLM
+        import logging
+        """
+        Returns probability of text being Human (Index 0).
+        """
+        if not text: return 0.0
+        inputs = self.d_tokenizer(text, return_tensors="pt", truncation=True, max_length=512).to(self.device)
+        with torch.no_grad():
+            outputs = self.d_model(**inputs)
+            probs = torch.softmax(outputs.logits, dim=1)
+        return probs[0, target_label_idx].item()
+
+    def generate_paraphrases(self, sentence, num_return_sequences=5):
+        import torch
+        import nltk
+        from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModelForSeq2SeqLM
+        import logging
+        """
+        Generates variations of a single sentence.
+        """
+        text = "paraphrase: " + sentence + " </s>"
+        encoding = self.p_tokenizer.encode_plus(text, padding="longest", return_tensors="pt")
+        input_ids = encoding["input_ids"].to(self.device)
+        attention_masks = encoding["attention_mask"].to(self.device)
+
+        with torch.no_grad():
+            outputs = self.p_model.generate(
+                input_ids=input_ids,
+                attention_mask=attention_masks,
+                max_length=256,
+                do_sample=True,          # Add randomness
+                top_k=120,
+                top_p=0.95,
+                early_stopping=True,
+                num_return_sequences=num_return_sequences
+            )
+
+        res = [self.p_tokenizer.decode(output, skip_special_tokens=True, clean_up_tokenization_spaces=True)
+               for output in outputs]
+        return set(res) # Return unique paraphrases only
+
+    def convert(self, text, goal_threshold=0.95):
+        import torch
+        import nltk
+        from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModelForSeq2SeqLM
+        import logging
+        print(f"\nOriginal Text Start: {text[:80]}...")
+
+        # Initial Check
+        current_prob = self.get_probability(text, target_label_idx=0)
+        print(f"Initial 'Real' Probability: {current_prob:.4f}")
+
+        if current_prob > 0.5:
+            print("Text is already detected as Real.")
+            return text
+
+        # Split text into sentences
+        try:
+            sentences = nltk.sent_tokenize(text)
+        except:
+            # Fallback if nltk fails
+            sentences = text.split('. ')
+
+        best_text = text
+        best_prob = current_prob
+
+        # Iterate through each sentence
+        for i, original_sent in enumerate(sentences):
+            if len(original_sent) < 10: continue # Skip tiny fragments
+
+            print(f"\nProcessing Sentence {i+1}/{len(sentences)}: '{original_sent[:50]}...'")
+
+            # Generate candidates
+            candidates = self.generate_paraphrases(original_sent, num_return_sequences=4)
+
+            sent_improved = False
+            local_best_sent = original_sent
+
+            for candidate in candidates:
+                # Construct the full paragraph with this candidate
+                # (Create a copy of the list to modify)
+                temp_sentences = sentences[:]
+                temp_sentences[i] = candidate
+                temp_full_text = " ".join(temp_sentences) # Join with spaces
+
+                # Check score
+                prob = self.get_probability(temp_full_text, target_label_idx=0)
+
+                # If this candidate improves the overall score, keep it
+                if prob > best_prob:
+                    best_prob = prob
+                    best_text = temp_full_text
+                    local_best_sent = candidate
+                    sent_improved = True
+
+            if sent_improved:
+                print(f"  -> Improved! New Score: {best_prob:.4f}")
+                print(f"  -> Swapped to: '{local_best_sent}'")
+                sentences[i] = local_best_sent # Update the main list for subsequent steps
+            else:
+                print("  -> No improvement found for this sentence.")
+
+            if best_prob > goal_threshold:
+                print("\nSuccess: Target threshold reached!")
+                break
+
+        return best_text
+
+# --- Usage ---
+#if __name__ == "__main__":
+def text_conversion(ai_text):
+    import torch
+    import nltk
+    from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModelForSeq2SeqLM
+    import logging
+
+    # Configure logging
+    logging.getLogger("transformers").setLevel(logging.ERROR)
+
+    # Download nltk sentence tokenizer data
+    nltk.download('punkt', quiet=True)
+    nltk.download('punkt_tab', quiet=True)
+    
+    adversary = AdversarialParaphraser()
+
+    #ai_text = "In a rare weekend of market activity, global equities are navigating a risk-off environment as investors digest a hawkish shift in U.S. monetary expectations following the nomination of Kevin Warsh as the next Federal Reserve Chair. On Friday, Wall Street closed the week in the red, with the S&P 500 dropping 0.52% and the Dow Jones sliding 0.85%, while tech stocks took a hit as the Nasdaq fell 0.66% on fears of a slower-than-expected easing cycle. This sentiment spilled into a historic Sunday trading session in India, where benchmarks opened with cautious volatility as Finance Minister Nirmala Sitharaman presented the Union Budget 2026, aiming for a 7.4% growth target amid global uncertainty. Meanwhile, precious metals faced a significant correction, with gold and silver prices retreating sharply from recent highs as the U.S. dollar strengthened, leaving international traders bracing for a potentially turbulent week ahead as central bank independence and corporate earnings remain in the spotlight."
+
+    final_text = adversary.convert(ai_text)
+
+    print("-" * 50)
+    print("Final Output:")
+    print(final_text)
+    print("-" * 50)
+    return final_text
