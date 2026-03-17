@@ -1,1 +1,1 @@
-include goto_conversion/probabilityTables/*.csv
+include goto_conversion/outputFiles/*.csv
