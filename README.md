@@ -23,7 +23,7 @@
 - 3x :1st_place_medal: [3xGold Medal (10th to 12th out of 1727) Solutions from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/who-used-goto-conversion) :basketball:
 - Top 1% :2nd_place_medal: [Silver Medal (33rd out of 3462) Solution from 2026 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kisameh/top-1-goto-conversion-uclaw) :basketball:
 - Top 3% :2nd_place_medal: [Silver Medal (97th out of 3462) Solution from 2026 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/pierridotite/top-1-solution-the-4-model-blend) :basketball:
-- :2nd_place_medal: [Silver Medal (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879) :basketball:
+- Top 5% :2nd_place_medal: [Silver Medal (38th out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/competitions/march-machine-learning-mania-2024/discussion/485888#2740879) :basketball:
 - :white_check_mark: [Approved by PySport](https://opensource.pysport.org/project/goto_conversion) :trophy:
 
 # Ease of Use
