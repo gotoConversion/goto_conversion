@@ -127,7 +127,6 @@ class AdversarialImageConverter:
     """
     Converts AI-generated images to bypass AI detectors using adversarial
     perturbations against a local ViT-based AI image detection model,
-    validated by the AI or Not API.
     """
 
     def __init__(self, detector_name="dima806/ai_vs_real_image_detection"):
@@ -161,7 +160,6 @@ class AdversarialImageConverter:
 
     def check_aiornot(self, image_path, api_token):
         """
-        Checks image classification via AI or Not API.
         Returns dict with 'verdict', 'ai_confidence', 'human_confidence'.
         """
         url = "https://api.aiornot.com/v2/image/sync"
@@ -229,7 +227,7 @@ class AdversarialImageConverter:
     def convert(self, image_path, output_path, api_token,
                 max_retries=5, initial_eps=0.02, initial_steps=50):
         """
-        Iteratively perturbs the image until AI or Not classifies it as human.
+        Iteratively perturbs the image until it classifies it as human.
         """
         if not os.path.exists(image_path):
             raise FileNotFoundError(f"Image not found: {image_path}")
@@ -241,7 +239,7 @@ class AdversarialImageConverter:
         # Initial API check
         api_result = self.check_aiornot(image_path, api_token)
         if api_result:
-            print(f"Initial AI or Not: verdict={api_result['verdict']}, "
+            print(f"Initial: verdict={api_result['verdict']}, "
                   f"AI={api_result['ai_confidence']:.4f}, "
                   f"Human={api_result['human_confidence']:.4f}")
             if api_result["verdict"] == "human":
@@ -284,15 +282,15 @@ class AdversarialImageConverter:
             best_img_full = best_img_224.resize(original_size, Image.LANCZOS)
             best_img_full.save(output_path, quality=95)
 
-            # Validate with AI or Not API
+            # Validate
             api_result = self.check_aiornot(output_path, api_token)
             if api_result:
-                print(f"  AI or Not: verdict={api_result['verdict']}, "
+                print(f"Validation: verdict={api_result['verdict']}, "
                       f"AI={api_result['ai_confidence']:.4f}, "
                       f"Human={api_result['human_confidence']:.4f}")
 
                 if api_result["verdict"] == "human":
-                    print("\nSuccess: AI or Not classifies image as HUMAN!")
+                    print("\nSuccess: classifies image as HUMAN!")
                     return output_path
 
         print(f"\nWarning: max_retries ({max_retries}) exceeded. "
@@ -303,14 +301,12 @@ class AdversarialImageConverter:
 def image_conversion(image_path, output_filename, aiornot_token,
                      max_retries=5, initial_eps=0.02, initial_steps=50):
     """
-    Converts an AI-generated image to bypass the AI or Not detector using
-    adversarial perturbations against a local ViT-based AI detection model,
-    validated by the AI or Not API.
+    Converts an AI-generated image using
+    adversarial perturbations against a local ViT-based AI detection model.
 
     Args:
         image_path: Path to the input AI-generated image
         output_filename: Path to save the converted image
-        aiornot_token: AI or Not API token for validation
         max_retries: Maximum number of adversarial passes
         initial_eps: Initial perturbation budget (increases per pass)
         initial_steps: Initial PGD steps (increases per pass)
