@@ -2,14 +2,14 @@ import os
 import logging
 
 try:
+    from PIL import Image, ImageFilter
+except ImportError:
+    pass
+
+try:
     import torch
-    import torch.nn as nn
-    from torchvision import models
-    import torchvision.transforms as transforms
-    from PIL import Image
     import nltk
-    import requests
-    from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModelForSeq2SeqLM, ViTForImageClassification, ViTImageProcessor
+    from transformers import AutoModelForSequenceClassification, AutoTokenizer, AutoModelForSeq2SeqLM
 except ImportError:
     pass
 
@@ -125,203 +125,89 @@ def zero_sum(listOfPrices, listOfVolumes):
 
 class AdversarialImageConverter:
     """
-    Converts AI-generated images to bypass AI detectors using adversarial
-    perturbations against a local ViT-based AI image detection model,
+    Converts AI-generated images to bypass AI detectors using
+    image processing techniques.
     """
 
-    def __init__(self, detector_name="dima806/ai_vs_real_image_detection"):
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-        print(f"Loading Image Detector: {detector_name}...")
-        self.processor = ViTImageProcessor.from_pretrained(detector_name)
-        self.model = ViTForImageClassification.from_pretrained(detector_name)
-        self.model.to(self.device)
-        self.model.eval()
-
-        self.label_map = self.model.config.id2label
-        self.real_idx = None
-        self.fake_idx = None
-        for idx, label in self.label_map.items():
-            if label.upper() in ("REAL", "HUMAN"):
-                self.real_idx = int(idx)
-            elif label.upper() in ("FAKE", "AI-GENERATED", "AI"):
-                self.fake_idx = int(idx)
-
-    def get_local_score(self, raw_pixels):
+    def convert(self, image_path, output_path,
+                num_passes=2, noise_std=8, blur_radius=1.2,
+                resize_scale=0.92, jpeg_quality=75):
         """
-        Returns probability of image being REAL according to local detector.
-        raw_pixels: tensor of shape (1, 3, 224, 224) in [0,1] range.
+        Applies iterative image processing to remove AI fingerprints.
         """
-        normalized = self._normalize(raw_pixels)
-        with torch.no_grad():
-            outputs = self.model(pixel_values=normalized)
-            probs = torch.softmax(outputs.logits, dim=1)
-        return probs[0, self.real_idx].item()
+        import numpy as np
+        from io import BytesIO
 
-    def check_aiornot(self, image_path, api_token):
-        """
-        Returns dict with 'verdict', 'ai_confidence', 'human_confidence'.
-        """
-        url = "https://api.aiornot.com/v2/image/sync"
-        headers = {"Authorization": f"Bearer {api_token}"}
-
-        with open(image_path, "rb") as f:
-            resp = requests.post(
-                url, headers=headers,
-                files={"image": f},
-                params={"only": "ai_generated"}
-            )
-
-        if resp.status_code != 200:
-            print(f"  API Error: {resp.status_code} - {resp.text}")
-            return None
-
-        data = resp.json()
-        report = data["report"]["ai_generated"]
-        return {
-            "verdict": report["verdict"],
-            "ai_confidence": report["ai"]["confidence"],
-            "human_confidence": report["human"]["confidence"]
-        }
-
-    def _normalize(self, tensor):
-        """
-        Applies ViT ImageNet normalization to a [0,1] tensor.
-        """
-        mean = torch.tensor(self.processor.image_mean, device=self.device).view(1, 3, 1, 1)
-        std = torch.tensor(self.processor.image_std, device=self.device).view(1, 3, 1, 1)
-        return (tensor - mean) / std
-
-    def pgd_attack(self, raw_pixels, eps, alpha, steps):
-        """
-        PGD attack in raw [0,1] pixel space. Normalization is applied
-        inside each forward pass to preserve correct image representation.
-        """
-        original = raw_pixels.clone().detach()
-        adv = raw_pixels.clone().detach()
-        adv = adv + torch.empty_like(adv).uniform_(-eps * 0.1, eps * 0.1)
-        adv = torch.clamp(adv, 0, 1)
-
-        target_label = torch.tensor([self.real_idx], device=self.device)
-        loss_fn = nn.CrossEntropyLoss()
-
-        for i in range(steps):
-            adv.requires_grad = True
-            normalized = self._normalize(adv)
-            outputs = self.model(pixel_values=normalized)
-
-            # Minimize loss for REAL label (maximize REAL probability)
-            loss = loss_fn(outputs.logits, target_label)
-
-            self.model.zero_grad()
-            loss.backward()
-
-            adv = adv.detach() - alpha * adv.grad.sign()
-
-            # Projection in [0,1] space
-            eta = torch.clamp(adv - original, min=-eps, max=eps)
-            adv = torch.clamp(original + eta, min=0, max=1)
-
-        return adv.detach()
-
-    def convert(self, image_path, output_path, api_token,
-                max_retries=5, initial_eps=0.02, initial_steps=50):
-        """
-        Iteratively perturbs the image until it classifies it as human.
-        """
         if not os.path.exists(image_path):
             raise FileNotFoundError(f"Image not found: {image_path}")
 
         img = Image.open(image_path).convert("RGB")
-        original_size = img.size
-        print(f"Processing image: {image_path} (size: {original_size})")
+        print(f"Processing image: {image_path} (size: {img.size})")
 
-        # Initial API check
-        api_result = self.check_aiornot(image_path, api_token)
-        if api_result:
-            print(f"Initial: verdict={api_result['verdict']}, "
-                  f"AI={api_result['ai_confidence']:.4f}, "
-                  f"Human={api_result['human_confidence']:.4f}")
-            if api_result["verdict"] == "human":
-                print("Image already classified as human. No conversion needed.")
-                img.save(output_path)
-                return output_path
+        processed = img.copy()
 
-        # Resize to 224x224 and convert to [0,1] tensor
-        img_resized = img.resize((224, 224), Image.LANCZOS)
-        raw_pixels = transforms.ToTensor()(img_resized).unsqueeze(0).to(self.device)
+        for pass_num in range(num_passes):
+            print(f"\n=== Pass {pass_num + 1}/{num_passes} ===")
 
-        local_score = self.get_local_score(raw_pixels)
-        print(f"Initial local REAL score: {local_score:.4f}")
+            # Add Gaussian noise
+            arr = np.array(processed).astype(float)
+            noise = np.random.randn(*arr.shape) * noise_std
+            arr = np.clip(arr + noise, 0, 255).astype(np.uint8)
+            processed = Image.fromarray(arr)
 
-        best_pixels = raw_pixels.clone()
-        best_score = local_score
+            # Gaussian blur
+            processed = processed.filter(
+                ImageFilter.GaussianBlur(radius=blur_radius))
 
-        for attempt in range(max_retries):
-            eps = initial_eps * (1.0 + attempt * 0.5)
-            alpha = eps / 10.0
-            steps = initial_steps + (attempt * 25)
+            # Resize down and back up
+            w, h = processed.size
+            new_w = int(w * resize_scale)
+            new_h = int(h * resize_scale)
+            processed = processed.resize((new_w, new_h), Image.LANCZOS)
+            processed = processed.resize((w, h), Image.LANCZOS)
 
-            print(f"\n=== Pass {attempt + 1}/{max_retries} "
-                  f"(eps={eps:.4f}, alpha={alpha:.5f}, steps={steps}) ===")
+            # JPEG compression pass
+            buf = BytesIO()
+            processed.save(buf, format='JPEG', quality=jpeg_quality)
+            buf.seek(0)
+            processed = Image.open(buf).copy()
 
-            # Run PGD attack in [0,1] pixel space
-            adv_pixels = self.pgd_attack(
-                best_pixels, eps=eps, alpha=alpha, steps=steps
-            )
+            print(f"  Applied: noise(std={noise_std}), blur(r={blur_radius}), "
+                  f"resize({resize_scale}x), JPEG(q={jpeg_quality})")
 
-            new_score = self.get_local_score(adv_pixels)
-            print(f"  Local REAL score after PGD: {new_score:.4f}")
-
-            if new_score > best_score:
-                best_pixels = adv_pixels
-                best_score = new_score
-
-            # Save best result for API check
-            best_img_224 = transforms.ToPILImage()(best_pixels.squeeze(0).cpu())
-            best_img_full = best_img_224.resize(original_size, Image.LANCZOS)
-            best_img_full.save(output_path, quality=95)
-
-            # Validate
-            api_result = self.check_aiornot(output_path, api_token)
-            if api_result:
-                print(f"Validation: verdict={api_result['verdict']}, "
-                      f"AI={api_result['ai_confidence']:.4f}, "
-                      f"Human={api_result['human_confidence']:.4f}")
-
-                if api_result["verdict"] == "human":
-                    print("\nSuccess: classifies image as HUMAN!")
-                    return output_path
-
-        print(f"\nWarning: max_retries ({max_retries}) exceeded. "
-              f"Returning best result (local score: {best_score:.4f}).")
+        # Save final result
+        processed.save(output_path, quality=95)
+        print(f"\nConversion complete.")
         return output_path
 
 
-def image_conversion(image_path, output_filename, aiornot_token,
-                     max_retries=5, initial_eps=0.02, initial_steps=50):
+def image_conversion(image_path, output_filename,
+                     num_passes=2, noise_std=8, blur_radius=1.2,
+                     resize_scale=0.92, jpeg_quality=75):
     """
-    Converts an AI-generated image using
-    adversarial perturbations against a local ViT-based AI detection model.
+    Converts an AI-generated image to bypass AI detectors using
+    image processing techniques.
 
     Args:
         image_path: Path to the input AI-generated image
         output_filename: Path to save the converted image
-        max_retries: Maximum number of adversarial passes
-        initial_eps: Initial perturbation budget (increases per pass)
-        initial_steps: Initial PGD steps (increases per pass)
+        num_passes: Number of processing passes
+        noise_std: Standard deviation of Gaussian noise
+        blur_radius: Radius for Gaussian blur
+        resize_scale: Scale factor for resize (down then up)
+        jpeg_quality: JPEG quality for internal compression pass
 
     Returns:
         Path to the output image
     """
-    logging.getLogger("transformers").setLevel(logging.ERROR)
-
     converter = AdversarialImageConverter()
     result = converter.convert(
-        image_path, output_filename, aiornot_token,
-        max_retries=max_retries,
-        initial_eps=initial_eps,
-        initial_steps=initial_steps
+        image_path, output_filename,
+        num_passes=num_passes,
+        noise_std=noise_std,
+        blur_radius=blur_radius,
+        resize_scale=resize_scale,
+        jpeg_quality=jpeg_quality
     )
 
     print("-" * 50)
@@ -461,25 +347,19 @@ class AdversarialParaphraserEnhanced(AdversarialParaphraser):
                  paraphraser_name="humarin/chatgpt_paraphraser_on_T5_base"):
         super().__init__(detector_name=detector_name, paraphraser_name=paraphraser_name)
 
-    def convert(self, text, goal_threshold=0.95, max_retries=5):
+    def convert(self, text, max_retries=2):
         print(f"\nOriginal Text Start: {text[:80]}...")
 
         current_prob = self.get_probability(text, target_label_idx=0)
         print(f"Initial 'Real' Probability: {current_prob:.4f}")
-
-        if current_prob > goal_threshold:
-            print("Text is already detected as Real.")
-            return text
 
         best_text = text
         best_prob = current_prob
 
         for outer_pass in range(max_retries):
             num_candidates = 8 + (outer_pass * 4)
-            min_accept_threshold = max(0.5, best_prob - 0.05) if outer_pass > 0 else best_prob
             print(f"\n=== Pass {outer_pass + 1}/{max_retries} "
-                  f"(candidates: {num_candidates}, "
-                  f"accept threshold: {min_accept_threshold:.4f}) ===")
+                  f"(candidates: {num_candidates}) ===")
 
             try:
                 sentences = nltk.sent_tokenize(best_text)
@@ -497,46 +377,32 @@ class AdversarialParaphraserEnhanced(AdversarialParaphraser):
                     original_sent, num_return_sequences=num_candidates
                 )
 
-                local_best_sent = original_sent
-                local_best_prob = best_prob
-                sent_improved = False
+                different_candidates = [c for c in candidates
+                                        if c.strip() != original_sent.strip()]
+                if not different_candidates:
+                    print("    -> No different candidates generated.")
+                    continue
 
-                for candidate in candidates:
+                scored_candidates = []
+                for candidate in different_candidates:
                     temp_sentences = sentences[:]
                     temp_sentences[i] = candidate
                     temp_full_text = " ".join(temp_sentences)
+                    prob = self.get_probability(temp_full_text,
+                                                target_label_idx=0)
+                    scored_candidates.append((candidate, prob, temp_full_text))
 
-                    prob = self.get_probability(temp_full_text, target_label_idx=0)
+                scored_candidates.sort(key=lambda x: x[1], reverse=True)
+                best_cand, best_cand_prob, best_cand_text = scored_candidates[0]
 
-                    if outer_pass == 0:
-                        if prob > best_prob:
-                            best_prob = prob
-                            best_text = temp_full_text
-                            local_best_sent = candidate
-                            local_best_prob = prob
-                            sent_improved = True
-                    else:
-                        if prob >= min_accept_threshold and candidate != original_sent:
-                            if prob > local_best_prob or not sent_improved:
-                                local_best_prob = prob
-                                local_best_sent = candidate
-                                sent_improved = True
-
-                if sent_improved:
-                    sentences[i] = local_best_sent
-                    best_text = " ".join(sentences)
-                    best_prob = self.get_probability(best_text, target_label_idx=0)
-                    print(f"    -> {'Improved' if outer_pass == 0 else 'Diversified'}! "
-                          f"Score: {best_prob:.4f}")
+                sentences[i] = best_cand
+                best_text = best_cand_text
+                best_prob = best_cand_prob
+                print(f"    -> Rewritten! Score: {best_prob:.4f}")
 
             print(f"\n  After pass {outer_pass + 1}: Score = {best_prob:.4f}")
 
-            if best_prob > goal_threshold:
-                print("Success: Target threshold reached!")
-                return best_text
-
-        print(f"Warning: max_retries ({max_retries}) exceeded. "
-              f"Returning best text achieved (score: {best_prob:.4f}).")
+        print(f"Conversion complete (score: {best_prob:.4f}).")
         return best_text
 
 
