@@ -13,6 +13,8 @@ Winners that directly submitted my secret sauce:
   - 70x :2nd_place_medal: [70xSilver Medal (14th to 83rd place out of 1727) Solution from 2025 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-goto-conversion-winning-solution) :basketball:
   - 15x :3rd_place_medal: [15xBronze Medal (86th to 100th place out of 821) Solution from 2024 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/updated-1xgold-2xsilvers-key-ingredient) :basketball:
   - 15x :3rd_place_medal: [15xBronze Medal (208th to 222nd place out of 3462) Solution from 2026 Basketball Outcome Prediction Competition](https://www.kaggle.com/code/kaito510/goto-conversion2024-2025-2026-withdirectsub) :basketball:
+  - :classical_building: [Approved by Royal Statistical Society](https://www.linkedin.com/posts/goto_sportsanalytics-olympics-python-share-7219848521242300418-qiWF/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABuTGmgB5Uocd28QoBsJvWQ0OcMlNH8NFXI) 🇬🇧
+  - :school: [Approved by Nagoya University Sports Machine Learning](https://www.linkedin.com/posts/goto_sports-ml-sportsanalytics-share-7354689819081412608-xddb/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABuTGmgB5Uocd28QoBsJvWQ0OcMlNH8NFXI) 🇯🇵
   - :white_check_mark: [Approved by PySport](https://opensource.pysport.org/project/goto_conversion) :trophy:
 
 Winners that used my secret sauce:
