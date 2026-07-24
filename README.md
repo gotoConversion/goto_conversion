@@ -10,13 +10,6 @@
 
 via LinkedIn: https://www.linkedin.com/in/goto/
 
-# Ease of Use
-
-To use `goto_conversion`, it does not require historical data for model fit, advanced domain knowledge, nor paid computational resources.
-Linked below provides five examples of how to use `goto_conversion` in the freely available, Google Colab.
-
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Xdo-4uZu0XFdbFuqZbV0gKUGs4L2rCAt?usp=sharing)
-
 # Wins
 
 `goto_conversion` has powered $47,000 of prize money, 10+ :1st_place_medal: gold-medal-winning solutions and 100+ :2nd_place_medal: :3rd_place_medal: medal-winning solutions on Kaggle [[1](#1)].
@@ -46,6 +39,13 @@ Approvals:
   - :classical_building: [Approved by Royal Statistical Society](https://www.linkedin.com/posts/goto_sportsanalytics-olympics-python-share-7219848521242300418-qiWF/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABuTGmgB5Uocd28QoBsJvWQ0OcMlNH8NFXI) 🇬🇧
   - :school: [Approved by Nagoya University Sports Machine Learning](https://www.linkedin.com/posts/goto_sports-ml-sportsanalytics-share-7354689819081412608-xddb/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABuTGmgB5Uocd28QoBsJvWQ0OcMlNH8NFXI) 🇯🇵
   - :white_check_mark: [Approved by PySport](https://opensource.pysport.org/project/goto_conversion) :trophy:
+
+# Ease of Use
+
+To use `goto_conversion`, it does not require historical data for model fit, advanced domain knowledge, nor paid computational resources.
+Linked below provides five examples of how to use `goto_conversion` in the freely available, Google Colab.
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Xdo-4uZu0XFdbFuqZbV0gKUGs4L2rCAt?usp=sharing)
 
 # Abstract
 
