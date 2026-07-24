@@ -1,8 +1,10 @@
-# `goto_conversion` - Powered $47,000 of prize money, 10+ Gold Medals and 100+ Medals on Kaggle
+# `goto_conversion` - Powered $47,000 of prize money :moneybag:, 10+ Gold Medals :1st_place_medal: and 100+ Medals on Kaggle
 
 **LATEST UPDATES ARE ON MY WEBSITE:**
 
 **https://gotoconversion.ai/**
+
+![websiteScreenshot](acknowledgementScreenshots/fifaScreenshot.png)
 
 # Wins
 
