@@ -1,8 +1,8 @@
 # `goto_conversion` - Powered $47,000 of prize money, 10+ Gold Medals and 100+ Medals on Kaggle
 
-**LATEST UPDATES ARE ON MY SUBSTACK:**
+**LATEST UPDATES ARE ON MY WEBSITE:**
 
-[![Substack](https://img.shields.io/badge/Substack-%23006f5c.svg?style=for-the-badge&logo=substack&logoColor=FF6719)](https://gotoconversion.substack.com/)
+**https://gotoconversion.ai/**
 
 # Wins
 
