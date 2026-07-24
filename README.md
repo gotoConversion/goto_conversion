@@ -6,6 +6,10 @@
 
 ![websiteScreenshot](acknowledgementScreenshots/fifaScreenshot.png)
 
+# Contact Me
+
+via LinkedIn: https://www.linkedin.com/in/goto/
+
 # Wins
 
 `goto_conversion` has powered $47,000 of prize money, 10+ :1st_place_medal: gold-medal-winning solutions and 100+ :2nd_place_medal: :3rd_place_medal: medal-winning solutions on Kaggle [[1](#1)].
@@ -63,7 +67,3 @@ pp. 934-943.](https://doi.org/10.1016/j.ijforecast.2014.02.008)
 
 <a id="3">[3]</a>
 [Kizildemir, Melis, Akin, Ertugrul and Alkan, Altug. "A family of solutions related to Shin’s model for probability forecasts" Journal of Quantitative Analysis in Sports, vol. 21, no. 2, 2025, pp. 153-158.](https://doi.org/10.1515/jqas-2024-0064)
-
-# Contact Me
-
-via LinkedIn: https://www.linkedin.com/in/goto/
